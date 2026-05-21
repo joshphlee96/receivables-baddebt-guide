@@ -37,6 +37,7 @@
 
     .editbar .toplink{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:8px 14px;font-weight:900;background:#ffffff;color:#0f172a;text-decoration:none;border:0;font-size:13px}
     .editbar .edit-only{display:none}.edit-on .editbar .edit-only{display:inline-flex}.edit-on .editbar span.edit-only{display:inline}
+.ppt-status{font-size:12px;color:#d9f99d;min-width:0;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .mode-view #viewerMode,.edit-on #editMode{background:#bbf7d0;color:#064e3b}
     table.design-object{display:block;max-width:100%;min-height:80px}
     table.design-object tbody{display:table;width:100%;border-collapse:separate;border-spacing:0}
@@ -45,7 +46,7 @@
   </style>
 </head>
 <body>
-<div class="editbar"><button id="viewerMode" type="button">Viewer mode</button><button id="editMode" type="button">Edit mode</button><button id="downloadPptx" type="button">PowerPoint 저장</button><span class="edit-hint edit-only">텍스트 수정 · 개체 모서리 드래그로 크기조절 · × 삭제</span><button id="resetEdits" class="edit-only" type="button">초기화</button></div>
+<div class="editbar"><button id="viewerMode" type="button">Viewer mode</button><button id="editMode" type="button">Edit mode</button><button id="downloadPptx" type="button">PowerPoint 저장</button><a class="toplink" href="receivables-tax-considerations.pptx" download>기본 PPT</a><span id="pptStatus" class="ppt-status"></span><span class="edit-hint edit-only">텍스트 수정 · 개체 모서리 드래그로 크기조절 · × 삭제</span><button id="resetEdits" class="edit-only" type="button">초기화</button></div>
 <div class="deck" id="deck">
 <section class="slide active dark"><div class="canvas">
   <div class="kicker">Overdue Receivables</div>
@@ -221,8 +222,17 @@
   document.getElementById('editMode').onclick=()=>{const pw=prompt('Edit mode 비밀번호를 입력하세요.');if(pw===EDIT_PASSWORD){setEditMode(true);}else if(pw!==null){alert('비밀번호가 일치하지 않습니다.');}};
   document.addEventListener('keydown',(e)=>{if((e.key==='Delete'||e.key==='Backspace')&&selectedObject&&!document.activeElement?.isContentEditable&&document.body.classList.contains('edit-on')){selectedObject.classList.add('deleted');saveObject(selectedObject);selectedObject=null;}});
   document.getElementById('resetEdits').onclick=()=>{if(confirm('이 브라우저에 저장된 수정 내용을 초기화할까요?')){Object.keys(localStorage).filter(k=>k.startsWith('receivablesGuide:')).forEach(k=>localStorage.removeItem(k));location.reload();}};
+  async function ensurePptxLib(){
+    if(typeof PptxGenJS !== 'undefined') return true;
+    await new Promise((resolve)=>{const sc=document.createElement('script');sc.src='pptxgen.bundle.js?v=2';sc.onload=resolve;sc.onerror=resolve;document.head.appendChild(sc);});
+    return typeof PptxGenJS !== 'undefined';
+  }
   async function savePowerPoint(){
-    if(typeof PptxGenJS === 'undefined'){alert('PowerPoint 생성 라이브러리를 불러오지 못했습니다.');return;}
+    const btn=document.getElementById('downloadPptx');
+    const status=document.getElementById('pptStatus');
+    status.textContent='생성 중...'; btn.disabled=true;
+    try{
+    if(!(await ensurePptxLib())){throw new Error('PowerPoint 생성 라이브러리를 불러오지 못했습니다. 새로고침 후 다시 시도하거나 기본 PPT를 사용해 주세요.');}
     const pptx=new PptxGenJS();
     pptx.layout='LAYOUT_WIDE';
     pptx.author='Accounting & Tax';
@@ -277,7 +287,25 @@
       }
       addFooter(sl,idx+1,allSlides.length);
     });
-    await pptx.writeFile({fileName:'receivables-tax-considerations-edited.pptx'});
+    const fileName='receivables-tax-considerations-edited.pptx';
+    try{
+      const blob=await pptx.write({outputType:'blob'});
+      const a=document.createElement('a');
+      a.href=URL.createObjectURL(blob);
+      a.download=fileName;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1000);
+    }catch(blobErr){
+      await pptx.writeFile({fileName});
+    }
+    status.textContent='다운로드 완료';
+    setTimeout(()=>status.textContent='',2500);
+    }catch(err){
+      console.error(err);
+      status.textContent='저장 실패';
+      alert((err&&err.message)||'PowerPoint 저장 중 오류가 발생했습니다.');
+    }finally{btn.disabled=false;}
   }
   document.getElementById('downloadPptx').onclick=savePowerPoint;
 </script>
