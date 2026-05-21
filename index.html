@@ -27,6 +27,31 @@
     .edit-on .editable:hover{box-shadow:0 0 0 2px rgba(0,132,61,.24);background:rgba(0,132,61,.05)}
     .edit-on .editable:focus{box-shadow:0 0 0 3px rgba(0,132,61,.38);background:rgba(255,255,255,.55)}
 
+
+    /* v12: company CI report style based on 업무자동화 PJT 중단보고 */
+    body{background:#eef3ee;color:#1a2b1f}
+    .canvas,.slide.dark .canvas{background:#ffffff;color:#1a2b1f;border:1px solid #e5ebe5;border-radius:18px;box-shadow:0 18px 55px rgba(20,45,30,.12);padding:54px 62px 58px}
+    .canvas::before,.canvas::after,.slide.dark .canvas::before{display:none!important}
+    .canvas-header-line{position:absolute;left:62px;right:62px;top:42px;height:2px;background:#0B8F55;z-index:4}
+    .slide-logo{position:absolute;right:62px;top:20px;z-index:6;background:#133820;border-radius:8px;padding:7px 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(19,56,32,.18)}
+    .slide-logo img{width:150px;height:auto;display:block}
+    .slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:#1a2b1f}
+    .slide.dark .muted,.slide.dark .small,.muted{color:#66766b}
+    h1{color:#123D2A;font-size:52px;line-height:1.08;letter-spacing:-.045em;margin-top:10px}
+    h2{color:#123D2A;font-size:39px;line-height:1.14;letter-spacing:-.04em;margin-top:6px}
+    .lead{color:#54665a;font-size:23px}
+    .kicker,.slide.dark .kicker{height:28px;min-width:48px;padding:5px 14px;border-radius:6px;background:#0B8F55;color:#fff;font-size:13px;letter-spacing:.02em;box-shadow:0 6px 15px rgba(11,143,85,.18);margin-bottom:18px}
+    .kicker::before{display:none}
+    .bar{background:#0B8F55;height:6px;border-radius:0;width:180px}
+    .box,.slide.dark .box{background:#ffffff;border:1px solid #e1e8e1;border-radius:12px;color:#1a2b1f;box-shadow:0 10px 28px rgba(20,45,30,.08)}
+    .box.accent{border-top:4px solid #0B8F55}.box.warn{border-top:4px solid #D8A323}.box.ok{border-top:4px solid #27A86B}.box.risk{border-top:4px solid #C2413A}
+    .big-number{background:linear-gradient(135deg,#0B8F55,#2DBE75);-webkit-background-clip:text;background-clip:text;color:transparent}
+    th{background:#123D2A;color:#fff}td{background:#fff}.note{background:#F5FAF6;border-color:#DCEADF;border-left-color:#0B8F55}
+    .copylink{background:#123D2A;border-color:#123D2A;color:#fff;border-radius:8px}.copylink b{color:#9FE6B8}
+    .footer,.slide.dark .footer{left:62px;right:62px;bottom:24px;color:#7a887d;border-top:1px solid #e2e8e2;padding-top:8px}
+    .controls,.editbar{background:rgba(18,61,42,.92)}
+    .editbar .toplink{border-radius:6px}.editbar button{border-radius:6px}.controls button{border-radius:6px}
+
     /* v7: resizable/deletable slide objects */
     .design-object{position:relative;overflow:auto;min-width:42px;min-height:24px}.edit-on .design-object{resize:both}
     .design-object.selected{box-shadow:0 0 0 3px rgba(0,132,61,.42),0 12px 34px rgba(0,72,34,.1)!important}
@@ -49,17 +74,17 @@
 <div class="editbar"><button id="viewerMode" type="button">Viewer mode</button><button id="editMode" type="button">Edit mode</button><button id="downloadPptx" type="button">PowerPoint 저장</button><a class="toplink" href="receivables-tax-considerations.pptx" download>기본 PPT</a><span id="pptStatus" class="ppt-status"></span><span class="edit-hint edit-only">텍스트 수정 · 개체 모서리 드래그로 크기조절 · × 삭제</span><button id="resetEdits" class="edit-only" type="button">초기화</button></div>
 <div class="deck" id="deck">
 <section class="slide active dark"><div class="canvas">
-  <div class="kicker">Overdue Receivables</div>
+  <div class="kicker">01</div>
   <h1>연체 매출채권 발생 시<br>영업 실무 유의사항</h1>
   <p class="lead">세무상 대손금 검토에 활용되는 채권관리 기록</p>
   <div class="bar"></div>
-  <p class="muted">평소 진행하는 독촉, 거래처 협의, 채권대책회의 내용을 나중에 확인할 수 있도록 남기는 것이 핵심입니다.</p>
+  <p class="muted">평소 진행하는 독촉, 거래처 협의, 채권대책회의 내용을 사후 확인 가능한 형태로 정리합니다.</p>
   <div class="copylink"><b>외부 열람 링크</b> · <span>https://joshphlee96.github.io/receivables-baddebt-guide/</span></div>
   <div class="footer"><span>Accounting & Tax / Receivables Control</span><span>1 / 12</span></div>
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">Simple Message</div>
+  <div class="kicker">02</div>
   <h2>영업에서 이미 하는 일을 기록으로 남기는 것</h2>
   <div class="grid three">
     <div class="box accent"><div class="big-number">01</div><h3>독촉</h3><p>전화만 한 경우에는 나중에 확인이 어렵습니다. 메일·문자·메신저 캡처를 같이 남깁니다.</p></div>
@@ -70,7 +95,7 @@
 </div></section>
 
 <section class="slide dark"><div class="canvas">
-  <div class="kicker">Why It Matters</div>
+  <div class="kicker">03</div>
   <h2>세무상 대손금은 “못 받았다”만으로 부족합니다</h2>
   <div class="grid two">
     <div class="box"><h3>회계상 제각</h3><ul><li>회사 장부에서 채권을 정리하는 절차</li><li>회수 가능성이 낮다고 판단한 회계처리</li><li>내부 판단만으로 처리될 수 있음</li></ul></div>
@@ -81,7 +106,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">What To Leave</div>
+  <div class="kicker">04</div>
   <h2>남겨야 하는 자료 예시</h2>
   <table>
     <tr><th>상황</th><th>남길 자료</th><th>예시</th></tr>
@@ -95,7 +120,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">Sample Email</div>
+  <div class="kicker">05</div>
   <h2>독촉 메일 예시</h2>
   <div class="grid two">
     <div class="box accent"><h3>1차 독촉</h3><p>제목: 미수금 지급 일정 확인 요청</p><p>귀사에 청구드린 아래 채권의 지급기일이 경과하여 지급 예정일 확인을 요청드립니다. 지급이 지연되는 사유가 있는 경우 함께 회신 부탁드립니다.</p><ul><li>청구금액:</li><li>지급기일:</li><li>현재 연체일수:</li></ul></div>
@@ -105,7 +130,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">When To Use</div>
+  <div class="kicker">06</div>
   <h2>내용증명은 언제 검토할까</h2>
   <div class="grid three">
     <div class="box accent"><h3>검토 시점</h3><ul><li>장기 연체</li><li>지급 약속 반복 불이행</li><li>담당자 연락두절</li><li>폐업 또는 이전 정황</li></ul></div>
@@ -116,7 +141,7 @@
 </div></section>
 
 <section class="slide dark"><div class="canvas">
-  <div class="kicker">Case 1</div>
+  <div class="kicker">07</div>
   <h2>판례 사례: 회수수단이 있었는지 확인</h2>
   <div class="grid two">
     <div class="box"><h3>사안의 포인트</h3><ul><li>부도어음금 관련 대손 처리</li><li>담보권 행사, 수수료 상계 등 회수수단 존재 여부가 문제됨</li><li>회수절차 없이 대손 처리한 부분이 쟁점</li></ul></div>
@@ -127,7 +152,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">Case 2</div>
+  <div class="kicker">08</div>
   <h2>판례 사례: 손금 관련 자료는 회사 쪽 자료가 중요</h2>
   <div class="grid two">
     <div class="box accent"><h3>사안의 포인트</h3><ul><li>손금에 관한 사실관계는 회사 내부 자료에 있는 경우가 많음</li><li>과세관청이 확인하기 어려운 자료는 납세자가 설명해야 할 수 있음</li><li>자료가 없으면 회사 주장을 뒷받침하기 어려움</li></ul></div>
@@ -138,7 +163,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">Meeting Materials</div>
+  <div class="kicker">09</div>
   <h2>채권대책회의 자료에 추가하면 좋은 항목</h2>
   <table>
     <tr><th>항목</th><th>기재 예시</th></tr>
@@ -153,7 +178,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">Examples</div>
+  <div class="kicker">10</div>
   <h2>기록 방식 예시</h2>
   <table>
     <tr><th>상황</th><th>부족한 기록</th><th>보완된 기록</th></tr>
@@ -166,7 +191,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">Checklist</div>
+  <div class="kicker">11</div>
   <h2>연체채권별 확인 체크리스트</h2>
   <div class="grid two">
     <div class="box accent"><h3>거래처 커뮤니케이션</h3><ul><li>독촉 메일 또는 문자 기록이 있는가</li><li>지급 예정일을 확인했는가</li><li>지급 지연 사유를 남겼는가</li><li>지급계획 또는 확약을 요청했는가</li></ul></div>
@@ -176,7 +201,7 @@
 </div></section>
 
 <section class="slide dark"><div class="canvas">
-  <div class="kicker">Official References</div>
+  <div class="kicker">12</div>
   <h2>공식 근거자료</h2>
   <ul>
     <li><a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">법인세법 제19조의2</a></li>
@@ -191,6 +216,8 @@
 <div class="controls"><button id="prev" type="button">← 이전</button><div class="counter" id="counter">1 / 12</div><button id="next" type="button">다음 →</button></div>
 <script src="pptxgen.bundle.js"></script>
 <script>
+  function addCiHeaders(){document.querySelectorAll('.canvas').forEach(c=>{if(c.querySelector('.slide-logo'))return;const line=document.createElement('div');line.className='canvas-header-line';const logo=document.createElement('div');logo.className='slide-logo';logo.innerHTML='<img src="assets/sangah-logo.png" alt="상아프론테크">';c.prepend(line,logo);});}
+  addCiHeaders();
   const slides=[...document.querySelectorAll('.slide')];const counter=document.getElementById('counter');let idx=0;function show(n){idx=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));counter.textContent=`${idx+1} / ${slides.length}`;history.replaceState(null,'',`#${idx+1}`)}document.getElementById('prev').onclick=()=>show(idx-1);document.getElementById('next').onclick=()=>show(idx+1);document.addEventListener('keydown',e=>{if(document.activeElement?.isContentEditable)return;if(['ArrowRight','PageDown',' '].includes(e.key))show(idx+1);if(['ArrowLeft','PageUp'].includes(e.key))show(idx-1);if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});const start=parseInt(location.hash.replace('#',''),10);if(start>=1&&start<=slides.length)show(start-1);
   const EDIT_PASSWORD='9302';
   document.body.classList.add('mode-view');
@@ -260,11 +287,17 @@
       const data=rows.map((r,i)=>r.map(v=>({text:v,options:{fontFace:'Aptos',fontSize:i?8.8:9.5,bold:i===0,color:i?C.text:C.white,fill:{color:i?C.white:C.deep},margin:0.05,valign:'mid'}})));
       sl.addTable(data,{x,y,w,h,border:{type:'solid',color:C.line,pt:0.6},autoFit:false,margin:0.04,fit:'shrink'});
     };
+    async function imageDataUri(url){
+      try{const res=await fetch(url); const blob=await res.blob(); return await new Promise((resolve)=>{const rd=new FileReader();rd.onload=()=>resolve(rd.result);rd.onerror=()=>resolve(null);rd.readAsDataURL(blob);});}catch(e){return null;}
+    }
+    const logoData=await imageDataUri('assets/sangah-logo.png');
     const allSlides=[...document.querySelectorAll('.slide')];
     allSlides.forEach((domSlide,idx)=>{
       const sl=pptx.addSlide();
-      sl.background={color:'FAFDFA'};
-      sl.addShape(pptx.ShapeType.rect,{x:0,y:0,w:13.333,h:0.1,fill:{color:C.green},line:{color:C.green,transparency:100}});
+      sl.background={color:'FFFFFF'};
+      sl.addShape(pptx.ShapeType.rect,{x:0.62,y:0.42,w:11.75,h:0.025,fill:{color:C.green},line:{color:C.green,transparency:100}});
+      sl.addShape(pptx.ShapeType.roundRect,{x:10.18,y:0.18,w:2.55,h:0.42,rectRadius:0.04,fill:{color:'123D2A'},line:{color:'123D2A',transparency:100}});
+      if(logoData) sl.addImage({data:logoData,x:10.32,y:0.28,w:2.25,h:0.32});
       const kicker=domSlide.querySelector('.kicker'); if(visible(kicker)) addText(sl,kicker.innerText,0.62,0.46,4.8,0.25,{size:9.5,bold:true,color:C.green});
       const h=domSlide.querySelector('h1,h2'); if(visible(h)) addText(sl,h.innerText,0.62,0.82,10.8,0.9,{size:30,bold:true});
       const lead=[...domSlide.querySelectorAll('.lead,.muted')].find(el=>visible(el)&&!el.closest('.box')&&!el.closest('.footer')&&!el.closest('.copylink'));
