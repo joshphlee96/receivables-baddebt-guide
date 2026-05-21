@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>연체 매출채권 증빙 요청 및 책임범위 안내</title>
+  <style>
+    :root{
+      --bg0:#05070d;--bg1:#08111f;--navy:#0f172a;--panel:#101827;--panel2:#121f33;
+      --paper:#f8fafc;--ink:#eaf2ff;--text:#102033;--muted:#728197;--line:#dbe5f0;
+      --blue:#2f6df6;--cyan:#17b6d9;--mint:#10b981;--gold:#f5b84b;--red:#ef4444;
+      --shadow:0 30px 90px rgba(0,0,0,.38);
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:radial-gradient(circle at 12% 10%,rgba(47,109,246,.34),transparent 30%),radial-gradient(circle at 88% 12%,rgba(23,182,217,.20),transparent 26%),linear-gradient(135deg,var(--bg0),var(--bg1) 52%,#020617);color:var(--text);overflow:hidden}
+    a{color:#1d4ed8;text-decoration:none;border-bottom:1px solid rgba(29,78,216,.35)} a:hover{color:#1e40af}
+    .deck{width:100vw;height:100vh;position:relative}.slide{position:absolute;inset:0;display:none;padding:34px 44px 76px;overflow:auto}.slide.active{display:flex;align-items:center;justify-content:center}
+    .canvas{width:min(1180px,100%);aspect-ratio:16/9;min-height:660px;max-height:calc(100vh - 112px);background:linear-gradient(135deg,#fff 0%,#f8fbff 54%,#edf5ff 100%);border:1px solid rgba(255,255,255,.55);border-radius:32px;box-shadow:var(--shadow);padding:52px 60px 58px;position:relative;overflow:hidden}
+    .canvas::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(47,109,246,.08),transparent 42%);pointer-events:none}.canvas::after{content:"";position:absolute;right:-140px;top:-140px;width:360px;height:360px;border-radius:999px;background:radial-gradient(circle,rgba(23,182,217,.22),rgba(47,109,246,.07) 58%,transparent 60%);pointer-events:none}
+    .slide.dark .canvas{background:linear-gradient(135deg,rgba(16,24,39,.98),rgba(8,17,31,.98));color:var(--ink);border-color:#24344e}.slide.dark .canvas::before{background:linear-gradient(135deg,rgba(47,109,246,.18),transparent 52%)}
+    .slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:var(--ink)}.slide.dark .muted,.slide.dark .small{color:#9fb0c7}.slide.dark .box{background:rgba(15,23,42,.72);border-color:#263752;color:var(--ink)}.slide.dark .note{background:rgba(15,23,42,.8);border-color:#334155;color:#cbd5e1}
+    .kicker{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}.kicker::before{content:"";width:34px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan))}.slide.dark .kicker{color:#7dd3fc}
+    h1{position:relative;z-index:1;margin:0 0 18px;font-size:56px;line-height:1.04;letter-spacing:-.055em;max-width:940px}h2{position:relative;z-index:1;margin:0 0 26px;font-size:42px;line-height:1.12;letter-spacing:-.045em;max-width:980px}h3{margin:0 0 10px;font-size:21px;line-height:1.25;letter-spacing:-.025em}
+    p,li,td,th{font-size:19px;line-height:1.45;letter-spacing:-.016em}p{margin:0 0 13px}.lead{font-size:25px;line-height:1.38;color:#334155;max-width:920px}.slide.dark .lead{color:#c9d7eb}.muted{color:var(--muted)}.small{font-size:13px;line-height:1.45;color:var(--muted)}
+    .bar{position:relative;z-index:1;width:250px;height:9px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--mint));margin:26px 0}.grid{position:relative;z-index:1;display:grid;gap:18px}.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}
+    .box{background:rgba(255,255,255,.78);border:1px solid rgba(213,226,241,.95);border-radius:24px;padding:22px 23px;box-shadow:0 12px 36px rgba(15,23,42,.08);backdrop-filter:blur(10px)}.box p,.box li{font-size:17.5px}.box.accent{border-top:5px solid var(--blue)}.box.warn{border-top:5px solid var(--gold)}.box.risk{border-top:5px solid var(--red)}.box.ok{border-top:5px solid var(--mint)}
+    .big-number{font-size:62px;font-weight:950;line-height:.9;letter-spacing:-.06em;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+    .quote{position:relative;z-index:1;margin:18px 0;padding:20px 24px;border-radius:22px;background:#eff6ff;border:1px solid #bfdbfe;border-left:8px solid var(--blue)}.quote p{font-size:22px;font-weight:750;color:#1e3a8a;margin:0}.slide.dark .quote{background:rgba(30,58,138,.34);border-color:#315a9f}.slide.dark .quote p{color:#dbeafe}
+    .note{position:relative;z-index:1;margin-top:18px;padding:14px 18px;background:#f1f5f9;border:1px solid #dbe3ef;border-left:5px solid #64748b;border-radius:16px}.note p{font-size:16px;margin:0;color:#475569}.slide.dark .note p{color:#cbd5e1}
+    .copylink{position:absolute;left:60px;right:60px;bottom:58px;z-index:3;padding:12px 16px;border-radius:14px;background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.35);color:#dbeafe;font-size:15px;line-height:1.35;word-break:break-all}.copylink b{color:#93c5fd}.copylink span{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:14px}
+    .tag{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:900;color:white;background:var(--blue);margin-right:6px;vertical-align:middle}.tag.red{background:var(--red)}.tag.amber{background:var(--gold);color:#3f2a05}.tag.green{background:var(--mint)}
+    ul{margin:10px 0 0;padding-left:23px}li{margin:8px 0}strong{font-weight:900}
+    table{position:relative;z-index:1;width:100%;border-collapse:separate;border-spacing:0;margin-top:8px;overflow:hidden;border-radius:18px;box-shadow:0 12px 36px rgba(15,23,42,.07)}th{background:#0f2a4f;color:#eaf2ff;font-size:15px;font-weight:900}td,th{padding:12px 14px;border-right:1px solid #dbe6f3;border-bottom:1px solid #dbe6f3;vertical-align:top}td{background:rgba(255,255,255,.86);font-size:16px}tr:last-child td{border-bottom:0}td:last-child,th:last-child{border-right:0}
+    .footer{position:absolute;left:60px;right:60px;bottom:26px;display:flex;justify-content:space-between;gap:20px;color:#8fa1b8;font-size:12px;z-index:2}.footer span{font-size:12px}.slide.dark .footer{color:#7f93b2}
+    .controls{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(7,12,22,.86);color:white;padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:999px;backdrop-filter:blur(12px);box-shadow:0 10px 35px rgba(0,0,0,.28);z-index:10}button{border:0;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;background:white;color:#0f172a}.counter{min-width:80px;text-align:center;font-weight:900;font-size:14px}
+    @media print{body{overflow:visible;background:white}.slide{display:block!important;position:relative;page-break-after:always;height:100vh;padding:20px}.canvas{box-shadow:none;border:1px solid #ddd;max-height:none}.controls{display:none}}
+    @media(max-width:800px){body{overflow:auto}.slide{padding:20px 14px 70px}.canvas{padding:30px 24px;aspect-ratio:auto;min-height:calc(100vh - 100px);max-height:none;border-radius:22px}h1{font-size:35px}h2{font-size:29px}p,li{font-size:17px}.lead{font-size:20px}.grid.two,.grid.three{grid-template-columns:1fr}.footer{left:24px;right:24px}}
+  </style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<section class="slide active dark"><div class="canvas">
+  <div class="kicker">AR Evidence Notice</div>
+  <h1>연체 매출채권<br>증빙 요청 및 책임범위 안내</h1>
+  <p class="lead">대손금 손금산입 검토를 위한 영업부서 제출자료 기준</p>
+  <div class="bar"></div>
+  <p class="muted">본 자료는 회계팀의 세무검토·세무조사 대응 가능 범위를 명확히 하기 위한 내부 안내입니다.</p>
+  <div class="note"><p>증빙 미제출 또는 회수조치 미이행 채권은 법인세 신고·세무조사 단계에서 회계팀이 손금산입을 방어하기 어렵습니다.</p></div>
+  <div class="copylink"><b>외부 열람 링크</b> · <span>https://joshphlee96.github.io/receivables-baddebt-guide/</span></div>
+  <div class="footer"><span>Accounting & Tax / Receivables Control</span><span>1 / 12</span></div>
+</div></section>
+
+<section class="slide"><div class="canvas">
+  <div class="kicker">Purpose</div>
+  <h2>이 안내의 목적</h2>
+  <div class="grid three">
+    <div class="box accent"><div class="big-number">01</div><h3>업무요청 기준화</h3><p>연체채권 발생 시 영업부서가 남겨야 할 최소 자료를 통일합니다.</p></div>
+    <div class="box warn"><div class="big-number">02</div><h3>세무검토 범위 확정</h3><p>회계팀은 제출된 증빙 범위 내에서만 대손금 손금산입 가능성을 검토합니다.</p></div>
+    <div class="box risk"><div class="big-number">03</div><h3>책임경계 명확화</h3><p>증빙 미비로 손금산입이 부인되는 경우, 회계팀의 검토·신고 책임 범위에서 제외됩니다.</p></div>
+  </div>
+  <div class="note"><p>본 자료는 설득자료가 아니라, 연체채권 관리와 세무 리스크 귀속을 명확히 하기 위한 안내자료입니다.</p></div>
+  <div class="footer"><span>안내 목적</span><span>2 / 12</span></div>
+</div></section>
+
+<section class="slide dark"><div class="canvas">
+  <div class="kicker">Legal Requirement</div>
+  <h2>세법상 대손금은 “회계상 제각”만으로 인정되지 않습니다</h2>
+  <div class="quote"><p>법인세법은 채무자의 파산 등 시행령이 정한 사유로 회수할 수 없는 채권을 대손금으로 보며, 해당 사업연도 손금산입 여부는 법정 요건과 귀속시기에 따라 판단됩니다.</p></div>
+  <div class="grid two">
+    <div class="box"><h3>주요 법령</h3><ul><li>법인세법 제19조의2</li><li>법인세법 시행령 제19조의2</li><li>상법상 소멸시효, 파산·강제집행·사업폐지·행방불명 등</li></ul></div>
+    <div class="box"><h3>회계팀 검토 한계</h3><ul><li>연체 사실만으로 대손금 인정 불가</li><li>구두 독촉만으로 객관증빙 부족</li><li>대손사유 및 회수불능 확정 자료가 없으면 세무조정상 방어 곤란</li></ul></div>
+  </div>
+  <p class="small">법령 링크: <a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">법인세법 제19조의2</a> / <a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">시행령 제19조의2</a></p>
+  <div class="footer"><span>법령 요건</span><span>3 / 12</span></div>
+</div></section>
+
+<section class="slide"><div class="canvas">
+  <div class="kicker">Court Precedents Only</div>
+  <h2>판례 근거는 공식 법원 자료만 사용합니다</h2>
+  <table>
+    <tr><th>공식 법원 판례</th><th>자료상 반영 기준</th><th>링크</th></tr>
+    <tr><td>대법원 2008.12.11. 선고 2006두18652</td><td>회수수단이 있었음에도 조치 없이 대손처리한 경우, 임의포기 또는 접대성 경비 이슈가 발생할 수 있음.</td><td><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2062359&c=900" target="_blank">사법정보공개포털</a></td></tr>
+    <tr><td>대법원 2013.10.31. 선고 2010두4599</td><td>손금에 관한 기초 사실관계가 납세자 지배영역에 있는 경우, 증명의 필요가 납세자에게 돌아갈 수 있음.</td><td><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2140791&c=900" target="_blank">사법정보공개포털</a></td></tr>
+    <tr><td>대법원 2025.9.11. 선고 2024두60435</td><td>파산 등으로 인한 회수불능은 객관적으로 확정되어야 하며, 임의포기 등 특별사정은 별도 검토 대상.</td><td><a href="https://www.scourt.go.kr/portal/news/NewsViewAction.work?seqnum=10645&gubun=4" target="_blank">대법원</a></td></tr>
+  </table>
+  <div class="note"><p>블로그, 판례검색 민간 사이트, 조세심판원 결정례는 본 자료의 “판례 근거”로 표시하지 않습니다. 필요한 경우 내부 검토 참고자료로만 별도 관리합니다.</p></div>
+  <div class="footer"><span>공식 판례 기준</span><span>4 / 12</span></div>
+</div></section>
+
+<section class="slide dark"><div class="canvas">
+  <div class="kicker">Responsibility Boundary</div>
+  <h2>책임범위 기준</h2>
+  <div class="grid three">
+    <div class="box accent"><h3>영업부서</h3><ul><li>거래처 독촉 및 회신 확보</li><li>지급지연 사유 확인</li><li>추가거래·감액·유예 관련 사전 공유</li><li>월별 연체 보고 시 증빙 첨부</li></ul></div>
+    <div class="box ok"><h3>회계/세무</h3><ul><li>제출자료 기준 세법상 대손요건 검토</li><li>손금산입 가능성 판단</li><li>미비자료 보완 요청</li><li>신고 및 세무조사 대응자료 편철</li></ul></div>
+    <div class="box risk"><h3>미제출 시 처리</h3><ul><li>증빙 미제출 채권으로 표시</li><li>대손금 손금산입 검토 보류 또는 제외</li><li>세무조사 추징 리스크 발생 시 미제출 이력 근거화</li></ul></div>
+  </div>
+  <div class="footer"><span>책임범위</span><span>5 / 12</span></div>
+</div></section>
+
+<section class="slide"><div class="canvas">
+  <div class="kicker">Required Evidence</div>
+  <h2>연체채권별 필수 제출자료</h2>
+  <table>
+    <tr><th>구분</th><th>제출자료</th><th>미제출 시 영향</th></tr>
+    <tr><td>독촉 사실</td><td>독촉메일, 문자/메신저 캡처, 내용증명, 지급요청 공문</td><td>회수노력 입증 곤란</td></tr>
+    <tr><td>거래처 회신</td><td>지급예정일, 지급지연 사유, 분할상환안, 지급확약서</td><td>회수가능성 및 귀속시기 판단 곤란</td></tr>
+    <tr><td>거래처 상태</td><td>폐업, 휴업, 회생, 파산, 부도, 소송, 강제집행 관련 자료</td><td>법정 대손사유 확인 곤란</td></tr>
+    <tr><td>추가거래 판단</td><td>추가거래 승인근거, 선입금 조건, 담보·상계 검토내역</td><td>채권 방치 또는 임의포기 오해 가능</td></tr>
+    <tr><td>내부 보고</td><td>월별 연체 보고서, 영업담당 의견, 향후 조치계획</td><td>부서별 책임소재 확인 곤란</td></tr>
+  </table>
+  <div class="footer"><span>필수 증빙</span><span>6 / 12</span></div>
+</div></section>
+
+<section class="slide"><div class="canvas">
+  <div class="kicker">Monthly Process</div>
+  <h2>월별 연체채권 보고 시 처리 기준</h2>
+  <table>
+    <tr><th>연체 구간</th><th>영업부서 조치</th><th>회계팀 처리</th></tr>
+    <tr><td>D+1~30</td><td>지급예정일 및 지연사유 확인, 1차 독촉 증빙 보관</td><td>연체현황 반영</td></tr>
+    <tr><td>D+31~60</td><td>상급자 공유, 지급계획 또는 확약 요청</td><td>증빙 누락 여부 표시</td></tr>
+    <tr><td>D+61~90</td><td>2차 독촉, 분할상환·상계·담보 가능성 검토</td><td>대손 리스크 관리대상 표시</td></tr>
+    <tr><td>D+90 초과</td><td>내용증명 또는 법적조치 검토 요청, 거래처 상태자료 확보</td><td>세무상 대손검토 가능/불가 1차 분류</td></tr>
+    <tr><td>장기 미회수</td><td>회수불능 사유 자료 누적 제출</td><td>자료 미비 시 손금산입 방어불가 의견 표시</td></tr>
+  </table>
+  <div class="footer"><span>월별 프로세스</span><span>7 / 12</span></div>
+</div></section>
+
+<section class="slide dark"><div class="canvas">
+  <div class="kicker">Non-compliance</div>
+  <h2>증빙 미제출 또는 조치 미이행 시 처리 원칙</h2>
+  <div class="grid two">
+    <div class="box risk"><h3>회계팀 처리</h3><ul><li>월별 보고서에 <strong>“증빙 미제출”</strong> 표시</li><li>대손금 손금산입 검토 대상에서 보류 또는 제외</li><li>세무조사 대응자료 목록에 미비사항으로 기록</li><li>추징 가능성 발생 시 관련 부서 미제출 이력 제시</li></ul></div>
+    <div class="box warn"><h3>부서 책임 귀속</h3><ul><li>거래처 연락·독촉 증빙은 영업부서 관리자료</li><li>추가거래·지급유예·감액 협의는 사전 공유 대상</li><li>자료 부재로 손금 인정이 불가능한 경우 회계팀 귀책으로 보지 않음</li></ul></div>
+  </div>
+  <div class="quote"><p>회계팀은 존재하지 않는 회수노력 자료나 거래처 상태자료를 사후에 대체 작성하지 않습니다.</p></div>
+  <div class="footer"><span>미이행 처리</span><span>8 / 12</span></div>
+</div></section>
+
+<section class="slide"><div class="canvas">
+  <div class="kicker">Controls</div>
+  <h2>추가거래·지급유예·감액 관련 통제</h2>
+  <div class="grid three">
+    <div class="box accent"><h3>추가거래</h3><p>연체 중 추가거래를 진행하는 경우 기존 채권 회수계획, 선입금 여부, 승인자를 월별 보고에 기재합니다.</p></div>
+    <div class="box warn"><h3>지급유예</h3><p>구두 유예는 인정하지 않습니다. 지급예정일·분할상환안·확약서 등 서면자료를 확보합니다.</p></div>
+    <div class="box risk"><h3>감액·면제</h3><p>영업부서 단독으로 감액·면제성 표현을 하지 않습니다. 사전 승인 없는 채권 포기는 세무상 부인 리스크가 있습니다.</p></div>
+  </div>
+  <div class="note"><p>판례상 회수수단이 있었음에도 행사하지 않은 경우 임의포기성 판단이 문제될 수 있으므로, 미행사 사유도 문서화해야 합니다.</p></div>
+  <div class="footer"><span>거래 통제</span><span>9 / 12</span></div>
+</div></section>
+
+<section class="slide"><div class="canvas">
+  <div class="kicker">Report Fields</div>
+  <h2>월별 보고서 필수 필드</h2>
+  <table>
+    <tr><th>필드</th><th>기재 방식</th></tr>
+    <tr><td>최종 독촉일 / 방식</td><td>예: 2026.05.10 / 이메일, 문자, 내용증명</td></tr>
+    <tr><td>거래처 회신</td><td>예: 5월 말 지급 예정 / 자금집행 지연 / 회신 없음</td></tr>
+    <tr><td>증빙 첨부 여부</td><td>예: 첨부 / 일부 첨부 / 미첨부</td></tr>
+    <tr><td>추가거래 여부</td><td>예: 중단 / 선입금 조건 / 승인 후 제한거래</td></tr>
+    <tr><td>다음 조치</td><td>예: 2차 독촉 / 내용증명 요청 / 법무검토 요청</td></tr>
+    <tr><td>회계팀 검토상태</td><td>예: 검토 가능 / 자료 보완 필요 / 손금산입 방어 곤란</td></tr>
+  </table>
+  <div class="footer"><span>보고 필드</span><span>10 / 12</span></div>
+</div></section>
+
+<section class="slide dark"><div class="canvas">
+  <div class="kicker">Internal Notice Text</div>
+  <h2>사내 공지 문구 예시</h2>
+  <div class="quote"><p>연체 매출채권은 회계상 제각 여부와 별개로 법인세법상 대손금 손금산입 요건을 충족해야 합니다. 회계팀은 영업부서가 제출한 독촉·회신·거래처 상태자료를 기준으로 세무상 검토를 수행합니다.</p></div>
+  <div class="quote"><p>월별 연체채권 보고 시 증빙이 제출되지 않은 채권은 “증빙 미제출”로 표시되며, 향후 대손금 손금산입이 부인되거나 추징 리스크가 발생하는 경우 해당 미제출 이력은 회계팀 책임범위 판단자료로 사용됩니다.</p></div>
+  <div class="footer"><span>공지 문구</span><span>11 / 12</span></div>
+</div></section>
+
+<section class="slide dark"><div class="canvas">
+  <div class="kicker">Official References</div>
+  <h2>공식 근거자료</h2>
+  <ul>
+    <li><a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">법인세법 제19조의2</a></li>
+    <li><a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">법인세법 시행령 제19조의2</a></li>
+    <li><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2062359&c=900" target="_blank">대법원 2008.12.11. 선고 2006두18652 — 사법정보공개포털</a></li>
+    <li><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2140791&c=900" target="_blank">대법원 2013.10.31. 선고 2010두4599 — 사법정보공개포털</a></li>
+    <li><a href="https://www.scourt.go.kr/portal/news/NewsViewAction.work?seqnum=10645&gubun=4" target="_blank">대법원 2025.9.11. 선고 2024두60435 — 대법원</a></li>
+  </ul>
+  <div class="note"><p>자료 기준: 판례는 공식 법원 링크만 사용. 민간 판례검색 사이트 및 블로그 링크는 본 안내자료에서 제외.</p></div>
+  <div class="footer"><span>References</span><span>12 / 12</span></div>
+</div></section>
+
+</div>
+<div class="controls">
+  <button id="prev" type="button">← 이전</button>
+  <div class="counter" id="counter">1 / 12</div>
+  <button id="next" type="button">다음 →</button>
+</div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const counter=document.getElementById('counter');
+  let idx=0;
+  function show(n){idx=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));counter.textContent=`${idx+1} / ${slides.length}`;history.replaceState(null,'',`#${idx+1}`)}
+  document.getElementById('prev').onclick=()=>show(idx-1);
+  document.getElementById('next').onclick=()=>show(idx+1);
+  document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))show(idx+1);if(['ArrowLeft','PageUp'].includes(e.key))show(idx-1);if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});
+  const start=parseInt(location.hash.replace('#',''),10); if(start>=1&&start<=slides.length)show(start-1);
+</script>
+</body>
+</html>
