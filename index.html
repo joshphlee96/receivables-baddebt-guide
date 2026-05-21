@@ -26,11 +26,22 @@
     .controls,.editbar{background:rgba(0,75,37,.88);border-color:rgba(255,255,255,.22)}
     .edit-on .editable:hover{box-shadow:0 0 0 2px rgba(0,132,61,.24);background:rgba(0,132,61,.05)}
     .edit-on .editable:focus{box-shadow:0 0 0 3px rgba(0,132,61,.38);background:rgba(255,255,255,.55)}
+
+    /* v7: resizable/deletable slide objects */
+    .design-object{position:relative;resize:both;overflow:auto;min-width:42px;min-height:24px}
+    .design-object.selected{box-shadow:0 0 0 3px rgba(0,132,61,.42),0 12px 34px rgba(0,72,34,.1)!important}
+    .design-object.deleted{display:none!important}
+    .obj-delete{position:absolute;right:6px;top:6px;z-index:30;width:22px;height:22px;display:none;align-items:center;justify-content:center;border-radius:999px;background:#006B35;color:white;border:1px solid rgba(255,255,255,.5);font-size:14px;font-weight:900;line-height:1;cursor:pointer;padding:0}
+    .design-object:hover>.obj-delete,.design-object.selected>.obj-delete{display:flex}
+    .resize-help{font-size:12px;color:#cbd5e1;padding:0 6px}
+    table.design-object{display:block;max-width:100%;min-height:80px}
+    table.design-object tbody{display:table;width:100%;border-collapse:separate;border-spacing:0}
+    .bar.design-object{min-height:9px;min-width:80px;overflow:hidden}
 @media print{body{overflow:visible;background:white}.slide{display:block!important;position:relative;page-break-after:always;height:100vh;padding:20px}.canvas{box-shadow:none;border:1px solid #ddd;max-height:none}.controls,.editbar{display:none}}@media(max-width:800px){body{overflow:auto}.slide{padding:20px 14px 70px}.canvas{padding:30px 24px;aspect-ratio:auto;min-height:calc(100vh - 100px);max-height:none;border-radius:22px}h1{font-size:35px}h2{font-size:29px}p,li{font-size:17px}.lead{font-size:20px}.grid.two,.grid.three{grid-template-columns:1fr}.footer{left:24px;right:24px}.editbar{left:14px;right:14px;top:10px;justify-content:center}}
   </style>
 </head>
 <body>
-<div class="editbar"><span class="edit-hint">텍스트 클릭 후 수정</span><button id="downloadHtml" type="button">HTML 저장</button><button id="resetEdits" type="button">초기화</button></div>
+<div class="editbar"><span class="edit-hint">텍스트 수정 · 개체 모서리 드래그로 크기조절 · × 삭제</span><button id="downloadHtml" type="button">HTML 저장</button><button id="resetEdits" type="button">초기화</button></div>
 <div class="deck" id="deck">
 <section class="slide active dark"><div class="canvas">
   <div class="kicker">Tax Considerations</div>
@@ -161,8 +172,26 @@
   const selector='h1,h2,h3,p,li,td,th,.kicker,.big-number,.footer span,.copylink span';
   const editables=[...document.querySelectorAll(selector)].filter(el=>!el.closest('.controls')&&!el.closest('.editbar'));
   editables.forEach((el,i)=>{el.contentEditable='true';el.spellcheck=false;el.classList.add('editable');el.dataset.editId='e'+i;const saved=localStorage.getItem('receivablesGuide:'+el.dataset.editId);if(saved!==null)el.innerHTML=saved;el.addEventListener('input',()=>localStorage.setItem('receivablesGuide:'+el.dataset.editId,el.innerHTML));});
+  const objSelector='.box,table,.bar,.note,.copylink';
+  const objects=[...document.querySelectorAll(objSelector)].filter(el=>!el.closest('.controls')&&!el.closest('.editbar'));
+  let selectedObject=null;
+  const selectObject=(el)=>{selectedObject?.classList.remove('selected');selectedObject=el;selectedObject?.classList.add('selected');};
+  const saveObject=(el)=>{if(!el?.dataset.objId)return;localStorage.setItem('receivablesGuide:obj:'+el.dataset.objId,JSON.stringify({width:el.style.width||'',height:el.style.height||'',deleted:el.classList.contains('deleted')}));};
+  objects.forEach((el,i)=>{
+    el.classList.add('design-object');el.dataset.objId='o'+i;
+    const saved=localStorage.getItem('receivablesGuide:obj:'+el.dataset.objId);
+    if(saved){try{const v=JSON.parse(saved);if(v.width)el.style.width=v.width;if(v.height)el.style.height=v.height;if(v.deleted)el.classList.add('deleted')}catch(e){}}
+    const del=document.createElement('button');del.type='button';del.className='obj-delete';del.textContent='×';del.title='개체 삭제';del.contentEditable='false';
+    del.onclick=(ev)=>{ev.preventDefault();ev.stopPropagation();el.classList.add('deleted');saveObject(el);};
+    el.appendChild(del);
+    el.addEventListener('click',(ev)=>{if(ev.target===del)return;selectObject(el);},true);
+    const ro=new ResizeObserver(()=>{if(el.offsetParent!==null){el.style.width=el.style.width||el.getBoundingClientRect().width+'px';el.style.height=el.style.height||el.getBoundingClientRect().height+'px';saveObject(el);}});
+    ro.observe(el);
+  });
+  document.addEventListener('keydown',(e)=>{if((e.key==='Delete'||e.key==='Backspace')&&selectedObject&&!document.activeElement?.isContentEditable){selectedObject.classList.add('deleted');saveObject(selectedObject);selectedObject=null;}});
   document.getElementById('resetEdits').onclick=()=>{if(confirm('이 브라우저에 저장된 수정 내용을 초기화할까요?')){Object.keys(localStorage).filter(k=>k.startsWith('receivablesGuide:')).forEach(k=>localStorage.removeItem(k));location.reload();}};
-  document.getElementById('downloadHtml').onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('[contenteditable]').forEach(el=>{el.removeAttribute('contenteditable');el.classList.remove('editable')});clone.querySelector('.editbar')?.remove();const html='<!doctype html>\n'+clone.outerHTML;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));a.download='receivables-tax-considerations-edited.html';a.click();URL.revokeObjectURL(a.href);};
+  document.getElementById('downloadHtml').onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('[contenteditable]').forEach(el=>{el.removeAttribute('contenteditable');el.classList.remove('editable')});clone.querySelectorAll('.obj-delete').forEach(el=>el.remove());clone.querySelectorAll('.selected').forEach(el=>el.classList.remove('selected'));clone.querySelectorAll('.deleted').forEach(el=>el.remove());clone.querySelector('.editbar')?.remove();const html='<!doctype html>
+'+clone.outerHTML;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));a.download='receivables-tax-considerations-edited.html';a.click();URL.revokeObjectURL(a.href);};
 </script>
 </body>
 </html>
