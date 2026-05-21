@@ -52,6 +52,26 @@
     .controls,.editbar{background:rgba(18,61,42,.92)}
     .editbar .toplink{border-radius:6px}.editbar button{border-radius:6px}.controls button{border-radius:6px}
 
+
+    /* v13: Gmail final PPT tone */
+    body{background:#F4F7FA;color:#1F2933}
+    .canvas,.slide.dark .canvas{background:#FFFFFF;color:#1F2933;border:1px solid #E3E9F1;border-radius:0;box-shadow:0 18px 45px rgba(24,90,170,.10);padding:54px 62px 58px}
+    .slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:#1F2933}
+    .slide.dark .muted,.slide.dark .small,.muted{color:#6B7280}
+    .canvas-header-line{left:62px;right:62px;top:63px;height:2px;background:#185AAA}
+    .slide-logo{right:62px;top:20px;background:transparent;border-radius:0;padding:0;box-shadow:none}
+    .slide-logo img{width:140px;height:auto}
+    .kicker,.slide.dark .kicker{height:30px;min-width:76px;padding:6px 16px;border-radius:9px;background:#185AAA;color:#fff;font-size:13px;letter-spacing:0;font-weight:800;box-shadow:0 5px 14px rgba(24,90,170,.20)}
+    h1{color:#12325F;font-size:50px;line-height:1.08;margin-top:20px}h2{color:#12325F;font-size:38px;line-height:1.14;margin-top:16px}.lead{color:#5F6B7A;font-size:22px}
+    .bar{background:#185AAA;height:4px;border-radius:0;width:160px}
+    .box,.slide.dark .box{background:#FFFFFF;border:1px solid #E3E9F1;border-radius:0;color:#1F2933;box-shadow:0 10px 26px rgba(24,90,170,.08)}
+    .box.accent{border-top:6px solid #185AAA}.box.warn{border-top:6px solid #D2A02A}.box.ok{border-top:6px solid #089462}.box.risk{border-top:6px solid #C2413A}
+    .big-number{background:linear-gradient(135deg,#185AAA,#2B6FC0);-webkit-background-clip:text;background-clip:text;color:transparent}
+    th{background:#185AAA;color:#fff}td{background:#fff}.note{background:#F0F6FD;border-color:#E3E9F1;border-left-color:#185AAA}
+    .copylink{background:#F0F6FD;border:1px solid #E3E9F1;color:#1F2933;border-radius:0}.copylink b{color:#185AAA}.copylink span{color:#1F2933}
+    .footer,.slide.dark .footer{color:#7B8794;border-top:1px solid #E3E9F1}
+    .controls,.editbar{background:rgba(18,50,95,.94)}
+
     /* v7: resizable/deletable slide objects */
     .design-object{position:relative;overflow:auto;min-width:42px;min-height:24px}.edit-on .design-object{resize:both}
     .design-object.selected{box-shadow:0 0 0 3px rgba(0,132,61,.42),0 12px 34px rgba(0,72,34,.1)!important}
@@ -74,7 +94,7 @@
 <div class="editbar"><button id="viewerMode" type="button">Viewer mode</button><button id="editMode" type="button">Edit mode</button><button id="downloadPptx" type="button">PowerPoint 저장</button><a class="toplink" href="receivables-tax-considerations.pptx" download>기본 PPT</a><span id="pptStatus" class="ppt-status"></span><span class="edit-hint edit-only">텍스트 수정 · 개체 모서리 드래그로 크기조절 · × 삭제</span><button id="resetEdits" class="edit-only" type="button">초기화</button></div>
 <div class="deck" id="deck">
 <section class="slide active dark"><div class="canvas">
-  <div class="kicker">01</div>
+  <div class="kicker">개요</div>
   <h1>연체 매출채권 발생 시<br>영업 실무 유의사항</h1>
   <p class="lead">세무상 대손금 검토에 활용되는 채권관리 기록</p>
   <div class="bar"></div>
@@ -84,7 +104,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">02</div>
+  <div class="kicker">핵심</div>
   <h2>영업에서 이미 하는 일을 기록으로 남기는 것</h2>
   <div class="grid three">
     <div class="box accent"><div class="big-number">01</div><h3>독촉</h3><p>전화만 한 경우에는 나중에 확인이 어렵습니다. 메일·문자·메신저 캡처를 같이 남깁니다.</p></div>
@@ -95,7 +115,7 @@
 </div></section>
 
 <section class="slide dark"><div class="canvas">
-  <div class="kicker">03</div>
+  <div class="kicker">기준</div>
   <h2>세무상 대손금은 “못 받았다”만으로 부족합니다</h2>
   <div class="grid two">
     <div class="box"><h3>회계상 제각</h3><ul><li>회사 장부에서 채권을 정리하는 절차</li><li>회수 가능성이 낮다고 판단한 회계처리</li><li>내부 판단만으로 처리될 수 있음</li></ul></div>
@@ -106,7 +126,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">04</div>
+  <div class="kicker">자료</div>
   <h2>남겨야 하는 자료 예시</h2>
   <table>
     <tr><th>상황</th><th>남길 자료</th><th>예시</th></tr>
@@ -120,7 +140,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">05</div>
+  <div class="kicker">예시</div>
   <h2>독촉 메일 예시</h2>
   <div class="grid two">
     <div class="box accent"><h3>1차 독촉</h3><p>제목: 미수금 지급 일정 확인 요청</p><p>귀사에 청구드린 아래 채권의 지급기일이 경과하여 지급 예정일 확인을 요청드립니다. 지급이 지연되는 사유가 있는 경우 함께 회신 부탁드립니다.</p><ul><li>청구금액:</li><li>지급기일:</li><li>현재 연체일수:</li></ul></div>
@@ -130,7 +150,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">06</div>
+  <div class="kicker">내용증명</div>
   <h2>내용증명은 언제 검토할까</h2>
   <div class="grid three">
     <div class="box accent"><h3>검토 시점</h3><ul><li>장기 연체</li><li>지급 약속 반복 불이행</li><li>담당자 연락두절</li><li>폐업 또는 이전 정황</li></ul></div>
@@ -141,7 +161,7 @@
 </div></section>
 
 <section class="slide dark"><div class="canvas">
-  <div class="kicker">07</div>
+  <div class="kicker">판례</div>
   <h2>판례 사례: 회수수단이 있었는지 확인</h2>
   <div class="grid two">
     <div class="box"><h3>사안의 포인트</h3><ul><li>부도어음금 관련 대손 처리</li><li>담보권 행사, 수수료 상계 등 회수수단 존재 여부가 문제됨</li><li>회수절차 없이 대손 처리한 부분이 쟁점</li></ul></div>
@@ -152,7 +172,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">08</div>
+  <div class="kicker">판례</div>
   <h2>판례 사례: 손금 관련 자료는 회사 쪽 자료가 중요</h2>
   <div class="grid two">
     <div class="box accent"><h3>사안의 포인트</h3><ul><li>손금에 관한 사실관계는 회사 내부 자료에 있는 경우가 많음</li><li>과세관청이 확인하기 어려운 자료는 납세자가 설명해야 할 수 있음</li><li>자료가 없으면 회사 주장을 뒷받침하기 어려움</li></ul></div>
@@ -163,7 +183,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">09</div>
+  <div class="kicker">회의자료</div>
   <h2>채권대책회의 자료에 추가하면 좋은 항목</h2>
   <table>
     <tr><th>항목</th><th>기재 예시</th></tr>
@@ -178,7 +198,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">10</div>
+  <div class="kicker">기록예시</div>
   <h2>기록 방식 예시</h2>
   <table>
     <tr><th>상황</th><th>부족한 기록</th><th>보완된 기록</th></tr>
@@ -191,7 +211,7 @@
 </div></section>
 
 <section class="slide"><div class="canvas">
-  <div class="kicker">11</div>
+  <div class="kicker">체크리스트</div>
   <h2>연체채권별 확인 체크리스트</h2>
   <div class="grid two">
     <div class="box accent"><h3>거래처 커뮤니케이션</h3><ul><li>독촉 메일 또는 문자 기록이 있는가</li><li>지급 예정일을 확인했는가</li><li>지급 지연 사유를 남겼는가</li><li>지급계획 또는 확약을 요청했는가</li></ul></div>
@@ -201,7 +221,7 @@
 </div></section>
 
 <section class="slide dark"><div class="canvas">
-  <div class="kicker">12</div>
+  <div class="kicker">근거</div>
   <h2>공식 근거자료</h2>
   <ul>
     <li><a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">법인세법 제19조의2</a></li>
@@ -267,7 +287,7 @@
     pptx.title=document.title;
     pptx.lang='ko-KR';
     pptx.theme={headFontFace:'Aptos',bodyFontFace:'Aptos',lang:'ko-KR'};
-    const C={green:'00843D',deep:'006B35',light:'EEF8F0',line:'D9EADC',text:'173524',muted:'5F7468',white:'FFFFFF',gold:'86A85D',red:'C2413A'};
+    const C={green:'185AAA',deep:'185AAA',light:'F0F6FD',line:'E3E9F1',text:'1F2933',muted:'6B7280',white:'FFFFFF',gold:'D2A02A',red:'C2413A',accentGreen:'089462'};
     const clean=t=>(t||'').replace(/×/g,'').replace(/\s+\n/g,'\n').replace(/\n\s+/g,'\n').trim();
     const visible=el=>el&&!el.classList.contains('deleted');
     const addText=(sl,t,x,y,w,h,opt={})=>{sl.addText(clean(t),{x,y,w,h,fontFace:'Aptos',fontSize:opt.size||14,bold:!!opt.bold,color:opt.color||C.text,fit:'shrink',valign:'top',margin:opt.margin??0.04});};
@@ -296,7 +316,7 @@
       const sl=pptx.addSlide();
       sl.background={color:'FFFFFF'};
       sl.addShape(pptx.ShapeType.rect,{x:0.62,y:0.42,w:11.75,h:0.025,fill:{color:C.green},line:{color:C.green,transparency:100}});
-      sl.addShape(pptx.ShapeType.roundRect,{x:10.18,y:0.18,w:2.55,h:0.42,rectRadius:0.04,fill:{color:'123D2A'},line:{color:'123D2A',transparency:100}});
+      sl.addShape(pptx.ShapeType.roundRect,{x:10.18,y:0.18,w:2.55,h:0.42,rectRadius:0.04,fill:{color:'FFFFFF',transparency:100},line:{color:'FFFFFF',transparency:100}});
       if(logoData) sl.addImage({data:logoData,x:10.32,y:0.28,w:2.25,h:0.32});
       const kicker=domSlide.querySelector('.kicker'); if(visible(kicker)) addText(sl,kicker.innerText,0.62,0.46,4.8,0.25,{size:9.5,bold:true,color:C.green});
       const h=domSlide.querySelector('h1,h2'); if(visible(h)) addText(sl,h.innerText,0.62,0.82,10.8,0.9,{size:30,bold:true});
