@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>연체 매출채권 발생 시 세무상 유의사항</title>
   <style>
-    :root{--bg0:#05070d;--bg1:#08111f;--navy:#0f172a;--panel:#101827;--paper:#f8fafc;--ink:#eaf2ff;--text:#102033;--muted:#728197;--line:#dbe5f0;--blue:#2f6df6;--cyan:#17b6d9;--mint:#10b981;--gold:#f5b84b;--red:#ef4444;--shadow:0 30px 90px rgba(0,0,0,.38)}
-    *{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:radial-gradient(circle at 12% 10%,rgba(47,109,246,.34),transparent 30%),radial-gradient(circle at 88% 12%,rgba(23,182,217,.20),transparent 26%),linear-gradient(135deg,var(--bg0),var(--bg1) 52%,#020617);color:var(--text);overflow:hidden}a{color:#1d4ed8;text-decoration:none;border-bottom:1px solid rgba(29,78,216,.35)}a:hover{color:#1e40af}.deck{width:100vw;height:100vh;position:relative}.slide{position:absolute;inset:0;display:none;padding:34px 44px 76px;overflow:auto}.slide.active{display:flex;align-items:center;justify-content:center}.canvas{width:min(1180px,100%);aspect-ratio:16/9;min-height:660px;max-height:calc(100vh - 112px);background:linear-gradient(135deg,#fff 0%,#f8fbff 54%,#edf5ff 100%);border:1px solid rgba(255,255,255,.55);border-radius:32px;box-shadow:var(--shadow);padding:52px 60px 58px;position:relative;overflow:hidden}.canvas::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(47,109,246,.08),transparent 42%);pointer-events:none}.canvas::after{content:"";position:absolute;right:-140px;top:-140px;width:360px;height:360px;border-radius:999px;background:radial-gradient(circle,rgba(23,182,217,.22),rgba(47,109,246,.07) 58%,transparent 60%);pointer-events:none}.slide.dark .canvas{background:linear-gradient(135deg,rgba(16,24,39,.98),rgba(8,17,31,.98));color:var(--ink);border-color:#24344e}.slide.dark .canvas::before{background:linear-gradient(135deg,rgba(47,109,246,.18),transparent 52%)}.slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:var(--ink)}.slide.dark .muted,.slide.dark .small{color:#9fb0c7}.slide.dark .box{background:rgba(15,23,42,.72);border-color:#263752;color:var(--ink)}.slide.dark .note{background:rgba(15,23,42,.8);border-color:#334155;color:#cbd5e1}.kicker{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}.kicker::before{content:"";width:34px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan))}.slide.dark .kicker{color:#7dd3fc}h1{position:relative;z-index:1;margin:0 0 18px;font-size:56px;line-height:1.04;letter-spacing:-.055em;max-width:940px}h2{position:relative;z-index:1;margin:0 0 26px;font-size:42px;line-height:1.12;letter-spacing:-.045em;max-width:980px}h3{margin:0 0 10px;font-size:21px;line-height:1.25;letter-spacing:-.025em}p,li,td,th{font-size:19px;line-height:1.45;letter-spacing:-.016em}p{margin:0 0 13px}.lead{font-size:25px;line-height:1.38;color:#334155;max-width:920px}.slide.dark .lead{color:#c9d7eb}.muted{color:var(--muted)}.small{font-size:13px;line-height:1.45;color:var(--muted)}.bar{position:relative;z-index:1;width:250px;height:9px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--mint));margin:26px 0}.grid{position:relative;z-index:1;display:grid;gap:18px}.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}.box{background:rgba(255,255,255,.78);border:1px solid rgba(213,226,241,.95);border-radius:24px;padding:22px 23px;box-shadow:0 12px 36px rgba(15,23,42,.08);backdrop-filter:blur(10px)}.box p,.box li{font-size:17.5px}.box.accent{border-top:5px solid var(--blue)}.box.warn{border-top:5px solid var(--gold)}.box.risk{border-top:5px solid var(--red)}.box.ok{border-top:5px solid var(--mint)}.big-number{font-size:62px;font-weight:950;line-height:.9;letter-spacing:-.06em;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}.quote{position:relative;z-index:1;margin:18px 0;padding:20px 24px;border-radius:22px;background:#eff6ff;border:1px solid #bfdbfe;border-left:8px solid var(--blue)}.quote p{font-size:22px;font-weight:750;color:#1e3a8a;margin:0}.slide.dark .quote{background:rgba(30,58,138,.34);border-color:#315a9f}.slide.dark .quote p{color:#dbeafe}.note{position:relative;z-index:1;margin-top:18px;padding:14px 18px;background:#f1f5f9;border:1px solid #dbe3ef;border-left:5px solid #64748b;border-radius:16px}.note p{font-size:16px;margin:0;color:#475569}.slide.dark .note p{color:#cbd5e1}.copylink{position:absolute;left:60px;right:60px;bottom:58px;z-index:3;padding:12px 16px;border-radius:14px;background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.35);color:#dbeafe;font-size:15px;line-height:1.35;word-break:break-all}.copylink b{color:#93c5fd}.copylink span{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:14px}.tag{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:900;color:white;background:var(--blue);margin-right:6px;vertical-align:middle}.tag.red{background:var(--red)}.tag.amber{background:var(--gold);color:#3f2a05}.tag.green{background:var(--mint)}ul{margin:10px 0 0;padding-left:23px}li{margin:8px 0}strong{font-weight:900}table{position:relative;z-index:1;width:100%;border-collapse:separate;border-spacing:0;margin-top:8px;overflow:hidden;border-radius:18px;box-shadow:0 12px 36px rgba(15,23,42,.07)}th{background:#0f2a4f;color:#eaf2ff;font-size:15px;font-weight:900}td,th{padding:12px 14px;border-right:1px solid #dbe6f3;border-bottom:1px solid #dbe6f3;vertical-align:top}td{background:rgba(255,255,255,.86);font-size:16px}tr:last-child td{border-bottom:0}td:last-child,th:last-child{border-right:0}.footer{position:absolute;left:60px;right:60px;bottom:26px;display:flex;justify-content:space-between;gap:20px;color:#8fa1b8;font-size:12px;z-index:2}.footer span{font-size:12px}.slide.dark .footer{color:#7f93b2}.controls{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(7,12,22,.86);color:white;padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:999px;backdrop-filter:blur(12px);box-shadow:0 10px 35px rgba(0,0,0,.28);z-index:10}button{border:0;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;background:white;color:#0f172a}.counter{min-width:80px;text-align:center;font-weight:900;font-size:14px}@media print{body{overflow:visible;background:white}.slide{display:block!important;position:relative;page-break-after:always;height:100vh;padding:20px}.canvas{box-shadow:none;border:1px solid #ddd;max-height:none}.controls{display:none}}@media(max-width:800px){body{overflow:auto}.slide{padding:20px 14px 70px}.canvas{padding:30px 24px;aspect-ratio:auto;min-height:calc(100vh - 100px);max-height:none;border-radius:22px}h1{font-size:35px}h2{font-size:29px}p,li{font-size:17px}.lead{font-size:20px}.grid.two,.grid.three{grid-template-columns:1fr}.footer{left:24px;right:24px}}
+    :root{--bg0:#05070d;--bg1:#08111f;--ink:#eaf2ff;--text:#102033;--muted:#728197;--line:#dbe5f0;--blue:#2f6df6;--cyan:#17b6d9;--mint:#10b981;--gold:#f5b84b;--red:#ef4444;--shadow:0 30px 90px rgba(0,0,0,.38)}
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:radial-gradient(circle at 12% 10%,rgba(47,109,246,.34),transparent 30%),radial-gradient(circle at 88% 12%,rgba(23,182,217,.20),transparent 26%),linear-gradient(135deg,var(--bg0),var(--bg1) 52%,#020617);color:var(--text);overflow:hidden}a{color:#1d4ed8;text-decoration:none;border-bottom:1px solid rgba(29,78,216,.35)}.deck{width:100vw;height:100vh;position:relative}.slide{position:absolute;inset:0;display:none;padding:34px 44px 76px;overflow:auto}.slide.active{display:flex;align-items:center;justify-content:center}.canvas{width:min(1180px,100%);aspect-ratio:16/9;min-height:660px;max-height:calc(100vh - 112px);background:linear-gradient(135deg,#fff 0%,#f8fbff 54%,#edf5ff 100%);border:1px solid rgba(255,255,255,.55);border-radius:32px;box-shadow:var(--shadow);padding:52px 60px 58px;position:relative;overflow:hidden}.canvas::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(47,109,246,.08),transparent 42%);pointer-events:none}.canvas::after{content:"";position:absolute;right:-140px;top:-140px;width:360px;height:360px;border-radius:999px;background:radial-gradient(circle,rgba(23,182,217,.22),rgba(47,109,246,.07) 58%,transparent 60%);pointer-events:none}.slide.dark .canvas{background:linear-gradient(135deg,rgba(16,24,39,.98),rgba(8,17,31,.98));color:var(--ink);border-color:#24344e}.slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:var(--ink)}.slide.dark .muted,.slide.dark .small{color:#9fb0c7}.slide.dark .box{background:rgba(15,23,42,.72);border-color:#263752;color:var(--ink)}.kicker{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}.kicker::before{content:"";width:34px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan))}.slide.dark .kicker{color:#7dd3fc}h1{position:relative;z-index:1;margin:0 0 18px;font-size:56px;line-height:1.04;letter-spacing:-.055em;max-width:940px}h2{position:relative;z-index:1;margin:0 0 26px;font-size:42px;line-height:1.12;letter-spacing:-.045em;max-width:980px}h3{margin:0 0 10px;font-size:21px;line-height:1.25;letter-spacing:-.025em}p,li,td,th{font-size:19px;line-height:1.45;letter-spacing:-.016em}p{margin:0 0 13px}.lead{font-size:25px;line-height:1.38;color:#334155;max-width:920px}.slide.dark .lead{color:#c9d7eb}.muted{color:var(--muted)}.small{font-size:13px;line-height:1.45;color:var(--muted)}.bar{position:relative;z-index:1;width:250px;height:9px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--mint));margin:26px 0}.grid{position:relative;z-index:1;display:grid;gap:18px}.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}.box{background:rgba(255,255,255,.78);border:1px solid rgba(213,226,241,.95);border-radius:24px;padding:22px 23px;box-shadow:0 12px 36px rgba(15,23,42,.08);backdrop-filter:blur(10px)}.box p,.box li{font-size:17.5px}.box.accent{border-top:5px solid var(--blue)}.box.warn{border-top:5px solid var(--gold)}.box.risk{border-top:5px solid var(--red)}.box.ok{border-top:5px solid var(--mint)}.big-number{font-size:62px;font-weight:950;line-height:.9;letter-spacing:-.06em;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}.note{position:relative;z-index:1;margin-top:18px;padding:14px 18px;background:#f1f5f9;border:1px solid #dbe3ef;border-left:5px solid #64748b;border-radius:16px}.note p{font-size:16px;margin:0;color:#475569}.copylink{position:absolute;left:60px;right:60px;bottom:58px;z-index:3;padding:12px 16px;border-radius:14px;background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.35);color:#dbeafe;font-size:15px;line-height:1.35;word-break:break-all}.copylink b{color:#93c5fd}.copylink span{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:14px}ul{margin:10px 0 0;padding-left:23px}li{margin:8px 0}table{position:relative;z-index:1;width:100%;border-collapse:separate;border-spacing:0;margin-top:8px;overflow:hidden;border-radius:18px;box-shadow:0 12px 36px rgba(15,23,42,.07)}th{background:#0f2a4f;color:#eaf2ff;font-size:15px;font-weight:900}td,th{padding:12px 14px;border-right:1px solid #dbe6f3;border-bottom:1px solid #dbe6f3;vertical-align:top}td{background:rgba(255,255,255,.86);font-size:16px}tr:last-child td{border-bottom:0}td:last-child,th:last-child{border-right:0}.footer{position:absolute;left:60px;right:60px;bottom:26px;display:flex;justify-content:space-between;gap:20px;color:#8fa1b8;font-size:12px;z-index:2}.footer span{font-size:12px}.slide.dark .footer{color:#7f93b2}.controls{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(7,12,22,.86);color:white;padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:999px;backdrop-filter:blur(12px);box-shadow:0 10px 35px rgba(0,0,0,.28);z-index:10}.editbar{position:fixed;right:18px;top:18px;z-index:20;display:flex;gap:8px;align-items:center;background:rgba(7,12,22,.86);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:9px 11px;color:white;backdrop-filter:blur(12px)}button{border:0;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;background:white;color:#0f172a}.editbar button{font-size:13px}.counter{min-width:80px;text-align:center;font-weight:900;font-size:14px}.editable{outline:0;border-radius:8px}.edit-on .editable:hover{box-shadow:0 0 0 2px rgba(47,109,246,.24);background:rgba(47,109,246,.05)}.edit-on .editable:focus{box-shadow:0 0 0 3px rgba(47,109,246,.42);background:rgba(255,255,255,.3)}.slide.dark .edit-on .editable:focus,.edit-on .slide.dark .editable:focus{background:rgba(255,255,255,.08)}.edit-hint{font-size:12px;color:#cbd5e1;padding:0 6px}@media print{body{overflow:visible;background:white}.slide{display:block!important;position:relative;page-break-after:always;height:100vh;padding:20px}.canvas{box-shadow:none;border:1px solid #ddd;max-height:none}.controls,.editbar{display:none}}@media(max-width:800px){body{overflow:auto}.slide{padding:20px 14px 70px}.canvas{padding:30px 24px;aspect-ratio:auto;min-height:calc(100vh - 100px);max-height:none;border-radius:22px}h1{font-size:35px}h2{font-size:29px}p,li{font-size:17px}.lead{font-size:20px}.grid.two,.grid.three{grid-template-columns:1fr}.footer{left:24px;right:24px}.editbar{left:14px;right:14px;top:10px;justify-content:center}}
   </style>
 </head>
 <body>
+<div class="editbar"><span class="edit-hint">텍스트 클릭 후 수정</span><button id="downloadHtml" type="button">HTML 저장</button><button id="resetEdits" type="button">초기화</button></div>
 <div class="deck" id="deck">
 <section class="slide active dark"><div class="canvas">
   <div class="kicker">Tax Considerations</div>
   <h1>연체 매출채권 발생 시<br>세무상 유의사항</h1>
-  <p class="lead">법인세법상 대손금 손금산입 검토를 위한 관리 보완사항</p>
+  <p class="lead">법인세법상 대손금 손금산입 검토 관련</p>
   <div class="bar"></div>
-  <p class="muted">본 자료는 기존 독촉업무 및 채권대책회의를 전제로, 향후 대손금 검토에 필요한 세무상 보완사항을 정리한 것입니다.</p>
-  <div class="note"><p>회수활동 자체보다, 회수활동의 경과·거래처 회신·후속조치 판단이 사후 확인 가능한 형태로 남아 있는지가 중요합니다.</p></div>
+  <p class="muted">기존 독촉업무 및 채권대책회의에서 세무 검토에 활용할 수 있는 기록을 보완합니다.</p>
   <div class="copylink"><b>외부 열람 링크</b> · <span>https://joshphlee96.github.io/receivables-baddebt-guide/</span></div>
-  <div class="footer"><span>Accounting & Tax / Receivables Control</span><span>1 / 12</span></div>
+  <div class="footer"><span>Accounting & Tax / Receivables Control</span><span>1 / 10</span></div>
 </div></section>
 
 <section class="slide"><div class="canvas">
@@ -27,66 +27,63 @@
   <h2>작성 배경</h2>
   <div class="grid three">
     <div class="box accent"><div class="big-number">01</div><h3>기존 관리절차</h3><p>영업부서는 연체채권에 대한 독촉, 거래처 협의 및 채권대책회의를 주기적으로 수행하고 있습니다.</p></div>
-    <div class="box warn"><div class="big-number">02</div><h3>세무상 보완 필요</h3><p>대손금 손금산입 검토 시에는 회수활동의 내용과 회수불능 사유가 객관자료로 확인될 필요가 있습니다.</p></div>
-    <div class="box ok"><div class="big-number">03</div><h3>보완 방향</h3><p>기존 업무를 추가로 대체하는 것이 아니라, 이미 수행 중인 관리활동을 세무검토에 활용 가능한 형태로 정리합니다.</p></div>
+    <div class="box warn"><div class="big-number">02</div><h3>세무상 보완</h3><p>대손금 검토 시 회수활동의 내용과 회수불능 사유가 객관자료로 확인될 필요가 있습니다.</p></div>
+    <div class="box ok"><div class="big-number">03</div><h3>보완 방향</h3><p>기존 관리활동을 세무검토에 활용 가능한 형태로 정리합니다.</p></div>
   </div>
-  <div class="note"><p>본 자료의 목적은 연체채권 발생 시 유의할 세무상 포인트를 공유하는 데 있습니다.</p></div>
-  <div class="footer"><span>작성 배경</span><span>2 / 12</span></div>
+  <div class="footer"><span>작성 배경</span><span>2 / 10</span></div>
 </div></section>
 
 <section class="slide dark"><div class="canvas">
   <div class="kicker">Legal Framework</div>
-  <h2>관련 법령의 기본 구조</h2>
-  <div class="quote"><p>법인세법은 채무자의 파산 등 대통령령으로 정하는 사유로 회수할 수 없는 채권을 대손금으로 보며, 그 손금산입 시기는 시행령에서 정한 기준에 따라 판단합니다.</p></div>
+  <h2>관련 법령</h2>
   <div class="grid two">
     <div class="box"><h3>주요 근거</h3><ul><li>법인세법 제19조의2</li><li>법인세법 시행령 제19조의2</li><li>소멸시효 완성, 파산, 강제집행, 사업폐지, 행방불명 등</li></ul></div>
     <div class="box"><h3>검토 항목</h3><ul><li>채권의 존재 및 금액</li><li>회수기일 및 연체 발생 사실</li><li>회수절차 진행 경과</li><li>회수불능 사유 및 발생시기</li></ul></div>
   </div>
   <p class="small">법령 링크: <a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">법인세법 제19조의2</a> / <a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">시행령 제19조의2</a></p>
-  <div class="footer"><span>법령 구조</span><span>3 / 12</span></div>
+  <div class="footer"><span>법령</span><span>3 / 10</span></div>
 </div></section>
 
 <section class="slide"><div class="canvas">
   <div class="kicker">Court Precedents</div>
-  <h2>공식 법원 판례 기준</h2>
+  <h2>공식 법원 판례</h2>
   <table>
     <tr><th>판례</th><th>반영 사항</th><th>공식 링크</th></tr>
-    <tr><td>대법원 2008.12.11. 선고 2006두18652</td><td>회수 가능한 수단이 존재하였는지, 해당 수단을 행사하지 않은 사정이 있는지 등이 대손금 판단에서 문제될 수 있습니다.</td><td><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2062359&c=900" target="_blank">사법정보공개포털</a></td></tr>
-    <tr><td>대법원 2013.10.31. 선고 2010두4599</td><td>손금 관련 사실관계가 납세자 지배영역에 있는 경우, 관련 자료의 제출 필요성이 인정될 수 있습니다.</td><td><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2140791&c=900" target="_blank">사법정보공개포털</a></td></tr>
-    <tr><td>대법원 2025.9.11. 선고 2024두60435</td><td>파산 등 사유에 따른 회수불능 여부는 객관적으로 확정되었는지를 기준으로 판단됩니다.</td><td><a href="https://www.scourt.go.kr/portal/news/NewsViewAction.work?seqnum=10645&gubun=4" target="_blank">대법원</a></td></tr>
+    <tr><td>대법원 2008.12.11. 선고 2006두18652</td><td>회수 가능한 수단의 존재 및 미행사 사정</td><td><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2062359&c=900" target="_blank">사법정보공개포털</a></td></tr>
+    <tr><td>대법원 2013.10.31. 선고 2010두4599</td><td>손금 관련 사실관계와 자료 제출 필요성</td><td><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2140791&c=900" target="_blank">사법정보공개포털</a></td></tr>
+    <tr><td>대법원 2025.9.11. 선고 2024두60435</td><td>파산 등 사유에 따른 회수불능의 객관적 확정</td><td><a href="https://www.scourt.go.kr/portal/news/NewsViewAction.work?seqnum=10645&gubun=4" target="_blank">대법원</a></td></tr>
   </table>
-  <div class="note"><p>판례 자료는 공식 법원 링크를 기준으로 표시합니다. 민간 판례검색 사이트 및 블로그 링크는 본 자료의 근거 링크에서 제외하였습니다.</p></div>
-  <div class="footer"><span>판례 기준</span><span>4 / 12</span></div>
+  <div class="footer"><span>판례</span><span>4 / 10</span></div>
 </div></section>
 
 <section class="slide dark"><div class="canvas">
   <div class="kicker">Key Points</div>
-  <h2>연체채권 발생 시 세무상 유의사항</h2>
+  <h2>연체채권 발생 시 확인사항</h2>
   <div class="grid three">
-    <div class="box accent"><h3>회수활동의 경과</h3><ul><li>독촉일자 및 방식</li><li>거래처 담당자 회신</li><li>지급예정일 또는 지급지연 사유</li><li>채권대책회의 논의사항</li></ul></div>
+    <div class="box accent"><h3>회수활동 경과</h3><ul><li>독촉일자 및 방식</li><li>거래처 담당자 회신</li><li>지급예정일 또는 지급지연 사유</li><li>채권대책회의 논의사항</li></ul></div>
     <div class="box warn"><h3>후속조치 판단</h3><ul><li>추가거래 여부</li><li>분할상환 또는 지급유예 여부</li><li>상계·담보·법적조치 검토 여부</li><li>조치 보류 사유</li></ul></div>
     <div class="box ok"><h3>회수불능 사유</h3><ul><li>폐업·휴업</li><li>회생·파산</li><li>강제집행 결과</li><li>행방불명 또는 연락두절 관련 자료</li></ul></div>
   </div>
-  <div class="footer"><span>유의사항</span><span>5 / 12</span></div>
+  <div class="footer"><span>확인사항</span><span>5 / 10</span></div>
 </div></section>
 
 <section class="slide"><div class="canvas">
   <div class="kicker">Documentation</div>
-  <h2>기존 업무에서 보완할 기록</h2>
+  <h2>기록 보완 항목</h2>
   <table>
-    <tr><th>구분</th><th>기록 예시</th><th>세무상 활용 목적</th></tr>
+    <tr><th>구분</th><th>기록 예시</th><th>활용 목적</th></tr>
     <tr><td>독촉 내역</td><td>독촉메일, 문자·메신저 캡처, 내용증명, 지급요청 공문</td><td>회수절차 진행 여부 확인</td></tr>
     <tr><td>거래처 회신</td><td>지급예정일, 지급지연 사유, 분할상환안, 지급확약서</td><td>회수가능성 및 후속조치 판단</td></tr>
     <tr><td>채권대책회의</td><td>회의자료, 논의 결과, 담당자별 후속조치, 조치기한</td><td>내부 관리절차 및 판단 경과 확인</td></tr>
     <tr><td>거래처 상태</td><td>폐업, 휴업, 회생, 파산, 부도, 소송, 강제집행 관련 자료</td><td>법정 대손사유 검토</td></tr>
     <tr><td>추가거래 관련</td><td>추가거래 승인근거, 선입금 조건, 담보·상계 검토자료</td><td>채권관리 적정성 검토</td></tr>
   </table>
-  <div class="footer"><span>보완 기록</span><span>6 / 12</span></div>
+  <div class="footer"><span>기록 보완</span><span>6 / 10</span></div>
 </div></section>
 
 <section class="slide"><div class="canvas">
   <div class="kicker">Monthly Review</div>
-  <h2>월별 연체채권 관리 시 확인사항</h2>
+  <h2>월별 관리 시 확인사항</h2>
   <table>
     <tr><th>연체 구간</th><th>확인 사항</th><th>관리 포인트</th></tr>
     <tr><td>D+1~30</td><td>지급예정일, 지급지연 사유, 1차 독촉 여부</td><td>독촉 및 회신 기록 보관</td></tr>
@@ -95,30 +92,18 @@
     <tr><td>D+90 초과</td><td>내용증명 또는 법적조치 검토 여부, 거래처 상태자료</td><td>회수불능 징후 및 자료 확보</td></tr>
     <tr><td>장기 미회수</td><td>회수불능 사유 및 관련 증빙 누적 여부</td><td>대손금 검토자료로 별도 관리</td></tr>
   </table>
-  <div class="footer"><span>월별 확인사항</span><span>7 / 12</span></div>
-</div></section>
-
-<section class="slide dark"><div class="canvas">
-  <div class="kicker">Insufficient Records</div>
-  <h2>기록 미비 시 검토상 제한</h2>
-  <div class="grid two">
-    <div class="box risk"><h3>제한되는 사항</h3><ul><li>회수절차 진행 경과 확인</li><li>회수불능 사유 발생시점 확인</li><li>추가거래 또는 지급유예의 사유 확인</li><li>세무조사 시 대손금 손금산입 설명</li></ul></div>
-    <div class="box warn"><h3>관리 방식</h3><ul><li>기록 미비 항목 별도 표시</li><li>보완 가능한 자료 확인</li><li>채권대책회의 자료와 연결 관리</li><li>추가 자료 확보 시 재검토</li></ul></div>
-  </div>
-  <div class="quote"><p>자료 미비 채권은 확인 가능한 자료의 범위 내에서 검토하며, 추가 자료가 확인되는 시점에 재검토할 수 있습니다.</p></div>
-  <div class="footer"><span>기록 미비 시 처리</span><span>8 / 12</span></div>
+  <div class="footer"><span>월별 관리</span><span>7 / 10</span></div>
 </div></section>
 
 <section class="slide"><div class="canvas">
   <div class="kicker">Control Points</div>
-  <h2>추가거래·지급유예·감액 관련 유의사항</h2>
+  <h2>추가거래·지급유예·감액</h2>
   <div class="grid three">
-    <div class="box accent"><h3>추가거래</h3><p>연체 상태에서 추가거래가 이루어지는 경우 기존 채권 회수계획, 선입금 여부 및 승인자를 기록합니다.</p></div>
-    <div class="box warn"><h3>지급유예</h3><p>지급유예 또는 분할상환 협의가 있는 경우 지급일정, 금액, 거래처 회신자료를 보관합니다.</p></div>
-    <div class="box risk"><h3>감액·면제</h3><p>채권 감액 또는 면제 가능성이 있는 협의는 사전 승인 및 관련 근거자료를 별도로 관리합니다.</p></div>
+    <div class="box accent"><h3>추가거래</h3><p>기존 채권 회수계획, 선입금 여부, 승인자 기록</p></div>
+    <div class="box warn"><h3>지급유예</h3><p>지급일정, 금액, 거래처 회신자료 보관</p></div>
+    <div class="box risk"><h3>감액·면제</h3><p>사전 승인 및 관련 근거자료 별도 관리</p></div>
   </div>
-  <div class="note"><p>회수 가능한 수단이 존재하였는지 여부는 대손금 검토 과정에서 확인될 수 있으므로, 조치 또는 미조치 사유를 문서화하는 것이 필요합니다.</p></div>
-  <div class="footer"><span>관리 유의사항</span><span>9 / 12</span></div>
+  <div class="footer"><span>거래조건 변경</span><span>8 / 10</span></div>
 </div></section>
 
 <section class="slide"><div class="canvas">
@@ -133,15 +118,7 @@
     <tr><td>다음 조치</td><td>2차 독촉 / 내용증명 요청 / 법무검토 요청</td></tr>
     <tr><td>세무 검토 참고사항</td><td>거래처 상태자료 확인 필요 / 회수불능 사유 발생 여부 확인 필요</td></tr>
   </table>
-  <div class="footer"><span>회의자료 보완 항목</span><span>10 / 12</span></div>
-</div></section>
-
-<section class="slide dark"><div class="canvas">
-  <div class="kicker">Sample Notice</div>
-  <h2>공지 문구 예시</h2>
-  <div class="quote"><p>연체 매출채권은 회계상 제각 여부와 별개로 법인세법상 대손금 손금산입 요건 검토가 필요합니다. 기존 독촉업무 및 채권대책회의 과정에서 확인되는 거래처 회신, 지급계획, 후속조치 및 회수불능 관련 자료를 함께 관리하여 주시기 바랍니다.</p></div>
-  <div class="quote"><p>해당 자료는 향후 대손금 검토 및 세무조사 대응 시 회수절차와 회수불능 사유를 확인하는 기초자료로 활용됩니다. 기록이 충분하지 않은 채권은 확인 가능한 자료의 범위 내에서 검토됩니다.</p></div>
-  <div class="footer"><span>공지 문구</span><span>11 / 12</span></div>
+  <div class="footer"><span>회의자료</span><span>9 / 10</span></div>
 </div></section>
 
 <section class="slide dark"><div class="canvas">
@@ -154,13 +131,18 @@
     <li><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2140791&c=900" target="_blank">대법원 2013.10.31. 선고 2010두4599 — 사법정보공개포털</a></li>
     <li><a href="https://www.scourt.go.kr/portal/news/NewsViewAction.work?seqnum=10645&gubun=4" target="_blank">대법원 2025.9.11. 선고 2024두60435 — 대법원</a></li>
   </ul>
-  <div class="note"><p>판례 링크는 공식 법원 자료만 표시하였습니다.</p></div>
-  <div class="footer"><span>References</span><span>12 / 12</span></div>
+  <div class="footer"><span>References</span><span>10 / 10</span></div>
 </div></section>
 </div>
-<div class="controls"><button id="prev" type="button">← 이전</button><div class="counter" id="counter">1 / 12</div><button id="next" type="button">다음 →</button></div>
+<div class="controls"><button id="prev" type="button">← 이전</button><div class="counter" id="counter">1 / 10</div><button id="next" type="button">다음 →</button></div>
 <script>
-  const slides=[...document.querySelectorAll('.slide')];const counter=document.getElementById('counter');let idx=0;function show(n){idx=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));counter.textContent=`${idx+1} / ${slides.length}`;history.replaceState(null,'',`#${idx+1}`)}document.getElementById('prev').onclick=()=>show(idx-1);document.getElementById('next').onclick=()=>show(idx+1);document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))show(idx+1);if(['ArrowLeft','PageUp'].includes(e.key))show(idx-1);if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});const start=parseInt(location.hash.replace('#',''),10);if(start>=1&&start<=slides.length)show(start-1);
+  const slides=[...document.querySelectorAll('.slide')];const counter=document.getElementById('counter');let idx=0;function show(n){idx=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));counter.textContent=`${idx+1} / ${slides.length}`;history.replaceState(null,'',`#${idx+1}`)}document.getElementById('prev').onclick=()=>show(idx-1);document.getElementById('next').onclick=()=>show(idx+1);document.addEventListener('keydown',e=>{if(document.activeElement?.isContentEditable)return;if(['ArrowRight','PageDown',' '].includes(e.key))show(idx+1);if(['ArrowLeft','PageUp'].includes(e.key))show(idx-1);if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});const start=parseInt(location.hash.replace('#',''),10);if(start>=1&&start<=slides.length)show(start-1);
+  document.body.classList.add('edit-on');
+  const selector='h1,h2,h3,p,li,td,th,.kicker,.big-number,.footer span,.copylink span';
+  const editables=[...document.querySelectorAll(selector)].filter(el=>!el.closest('.controls')&&!el.closest('.editbar'));
+  editables.forEach((el,i)=>{el.contentEditable='true';el.spellcheck=false;el.classList.add('editable');el.dataset.editId='e'+i;const saved=localStorage.getItem('receivablesGuide:'+el.dataset.editId);if(saved!==null)el.innerHTML=saved;el.addEventListener('input',()=>localStorage.setItem('receivablesGuide:'+el.dataset.editId,el.innerHTML));});
+  document.getElementById('resetEdits').onclick=()=>{if(confirm('이 브라우저에 저장된 수정 내용을 초기화할까요?')){Object.keys(localStorage).filter(k=>k.startsWith('receivablesGuide:')).forEach(k=>localStorage.removeItem(k));location.reload();}};
+  document.getElementById('downloadHtml').onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('[contenteditable]').forEach(el=>{el.removeAttribute('contenteditable');el.classList.remove('editable')});clone.querySelector('.editbar')?.remove();const html='<!doctype html>\n'+clone.outerHTML;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));a.download='receivables-tax-considerations-edited.html';a.click();URL.revokeObjectURL(a.href);};
 </script>
 </body>
 </html>
