@@ -222,8 +222,8 @@
   document.addEventListener('keydown',(e)=>{if((e.key==='Delete'||e.key==='Backspace')&&selectedObject&&!document.activeElement?.isContentEditable&&document.body.classList.contains('edit-on')){selectedObject.classList.add('deleted');saveObject(selectedObject);selectedObject=null;}});
   document.getElementById('resetEdits').onclick=()=>{if(confirm('이 브라우저에 저장된 수정 내용을 초기화할까요?')){Object.keys(localStorage).filter(k=>k.startsWith('receivablesGuide:')).forEach(k=>localStorage.removeItem(k));location.reload();}};
   async function savePowerPoint(){
-    if(typeof pptxgen === 'undefined'){alert('PowerPoint 생성 라이브러리를 불러오지 못했습니다.');return;}
-    const pptx=new pptxgen();
+    if(typeof PptxGenJS === 'undefined'){alert('PowerPoint 생성 라이브러리를 불러오지 못했습니다.');return;}
+    const pptx=new PptxGenJS();
     pptx.layout='LAYOUT_WIDE';
     pptx.author='Accounting & Tax';
     pptx.subject='연체 매출채권 발생 시 영업 실무 유의사항';
