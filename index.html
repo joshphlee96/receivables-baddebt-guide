@@ -45,7 +45,7 @@
   </style>
 </head>
 <body>
-<div class="editbar"><button id="viewerMode" type="button">Viewer mode</button><button id="editMode" type="button">Edit mode</button><a class="toplink" href="receivables-tax-considerations.pptx" download>PowerPoint 다운로드</a><span class="edit-hint edit-only">텍스트 수정 · 개체 모서리 드래그로 크기조절 · × 삭제</span><button id="downloadHtml" class="edit-only" type="button">HTML 저장</button><button id="resetEdits" class="edit-only" type="button">초기화</button></div>
+<div class="editbar"><button id="viewerMode" type="button">Viewer mode</button><button id="editMode" type="button">Edit mode</button><button id="downloadPptx" type="button">PowerPoint 저장</button><span class="edit-hint edit-only">텍스트 수정 · 개체 모서리 드래그로 크기조절 · × 삭제</span><button id="resetEdits" class="edit-only" type="button">초기화</button></div>
 <div class="deck" id="deck">
 <section class="slide active dark"><div class="canvas">
   <div class="kicker">Overdue Receivables</div>
@@ -188,6 +188,7 @@
 </div></section>
 </div>
 <div class="controls"><button id="prev" type="button">← 이전</button><div class="counter" id="counter">1 / 12</div><button id="next" type="button">다음 →</button></div>
+<script src="pptxgen.bundle.js"></script>
 <script>
   const slides=[...document.querySelectorAll('.slide')];const counter=document.getElementById('counter');let idx=0;function show(n){idx=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));counter.textContent=`${idx+1} / ${slides.length}`;history.replaceState(null,'',`#${idx+1}`)}document.getElementById('prev').onclick=()=>show(idx-1);document.getElementById('next').onclick=()=>show(idx+1);document.addEventListener('keydown',e=>{if(document.activeElement?.isContentEditable)return;if(['ArrowRight','PageDown',' '].includes(e.key))show(idx+1);if(['ArrowLeft','PageUp'].includes(e.key))show(idx-1);if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});const start=parseInt(location.hash.replace('#',''),10);if(start>=1&&start<=slides.length)show(start-1);
   const EDIT_PASSWORD='9302';
@@ -220,7 +221,65 @@
   document.getElementById('editMode').onclick=()=>{const pw=prompt('Edit mode 비밀번호를 입력하세요.');if(pw===EDIT_PASSWORD){setEditMode(true);}else if(pw!==null){alert('비밀번호가 일치하지 않습니다.');}};
   document.addEventListener('keydown',(e)=>{if((e.key==='Delete'||e.key==='Backspace')&&selectedObject&&!document.activeElement?.isContentEditable&&document.body.classList.contains('edit-on')){selectedObject.classList.add('deleted');saveObject(selectedObject);selectedObject=null;}});
   document.getElementById('resetEdits').onclick=()=>{if(confirm('이 브라우저에 저장된 수정 내용을 초기화할까요?')){Object.keys(localStorage).filter(k=>k.startsWith('receivablesGuide:')).forEach(k=>localStorage.removeItem(k));location.reload();}};
-  document.getElementById('downloadHtml').onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('[contenteditable]').forEach(el=>{el.removeAttribute('contenteditable');el.classList.remove('editable')});clone.querySelectorAll('.obj-delete').forEach(el=>el.remove());clone.querySelectorAll('.selected').forEach(el=>el.classList.remove('selected'));clone.querySelectorAll('.deleted').forEach(el=>el.remove());clone.querySelector('.editbar')?.remove();const html='<!doctype html>\n'+clone.outerHTML;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));a.download='receivables-tax-considerations-edited.html';a.click();URL.revokeObjectURL(a.href);};
+  async function savePowerPoint(){
+    if(typeof pptxgen === 'undefined'){alert('PowerPoint 생성 라이브러리를 불러오지 못했습니다.');return;}
+    const pptx=new pptxgen();
+    pptx.layout='LAYOUT_WIDE';
+    pptx.author='Accounting & Tax';
+    pptx.subject='연체 매출채권 발생 시 영업 실무 유의사항';
+    pptx.title=document.title;
+    pptx.lang='ko-KR';
+    pptx.theme={headFontFace:'Aptos',bodyFontFace:'Aptos',lang:'ko-KR'};
+    const C={green:'00843D',deep:'006B35',light:'EEF8F0',line:'D9EADC',text:'173524',muted:'5F7468',white:'FFFFFF',gold:'86A85D',red:'C2413A'};
+    const clean=t=>(t||'').replace(/×/g,'').replace(/\s+\n/g,'\n').replace(/\n\s+/g,'\n').trim();
+    const visible=el=>el&&!el.classList.contains('deleted');
+    const addText=(sl,t,x,y,w,h,opt={})=>{sl.addText(clean(t),{x,y,w,h,fontFace:'Aptos',fontSize:opt.size||14,bold:!!opt.bold,color:opt.color||C.text,fit:'shrink',valign:'top',margin:opt.margin??0.04});};
+    const addFooter=(sl,n,total)=>{addText(sl,'Accounting & Tax / Receivables Control',0.55,7.08,4,0.2,{size:8,color:C.muted});addText(sl,`${n} / ${total}`,12.05,7.08,0.7,0.2,{size:8,color:C.muted});};
+    const addCard=(sl,el,x,y,w,h,accent)=>{
+      sl.addShape(pptx.ShapeType.roundRect,{x,y,w,h,rectRadius:0.08,fill:{color:C.white},line:{color:C.line,pt:1}});
+      sl.addShape(pptx.ShapeType.rect,{x,y,w,h:0.07,fill:{color:accent},line:{color:accent,transparency:100}});
+      const head=el.querySelector('h3')?.innerText||'';
+      const parts=[];
+      [...el.children].forEach(ch=>{if(ch.classList?.contains('obj-delete')||ch.tagName==='H3'||ch.classList?.contains('big-number'))return; if(ch.tagName==='UL'){parts.push([...ch.querySelectorAll('li')].map(li=>'• '+clean(li.innerText)).join('\n'));} else {const txt=clean(ch.innerText); if(txt) parts.push(txt);}});
+      addText(sl,head,x+0.17,y+0.15,w-0.34,0.32,{size:14,bold:true});
+      addText(sl,parts.join('\n'),x+0.17,y+0.55,w-0.34,h-0.65,{size:11});
+    };
+    const addDomTable=(sl,tbl,x,y,w,h)=>{
+      const rows=[...tbl.querySelectorAll('tr')].map(tr=>[...tr.children].filter(c=>!c.classList.contains('obj-delete')).map(c=>clean(c.innerText))).filter(r=>r.length);
+      if(!rows.length)return;
+      const data=rows.map((r,i)=>r.map(v=>({text:v,options:{fontFace:'Aptos',fontSize:i?8.8:9.5,bold:i===0,color:i?C.text:C.white,fill:{color:i?C.white:C.deep},margin:0.05,valign:'mid'}})));
+      sl.addTable(data,{x,y,w,h,border:{type:'solid',color:C.line,pt:0.6},autoFit:false,margin:0.04,fit:'shrink'});
+    };
+    const allSlides=[...document.querySelectorAll('.slide')];
+    allSlides.forEach((domSlide,idx)=>{
+      const sl=pptx.addSlide();
+      sl.background={color:'FAFDFA'};
+      sl.addShape(pptx.ShapeType.rect,{x:0,y:0,w:13.333,h:0.1,fill:{color:C.green},line:{color:C.green,transparency:100}});
+      const kicker=domSlide.querySelector('.kicker'); if(visible(kicker)) addText(sl,kicker.innerText,0.62,0.46,4.8,0.25,{size:9.5,bold:true,color:C.green});
+      const h=domSlide.querySelector('h1,h2'); if(visible(h)) addText(sl,h.innerText,0.62,0.82,10.8,0.9,{size:30,bold:true});
+      const lead=[...domSlide.querySelectorAll('.lead,.muted')].find(el=>visible(el)&&!el.closest('.box')&&!el.closest('.footer')&&!el.closest('.copylink'));
+      if(lead) addText(sl,lead.innerText,0.62,1.65,10.6,0.45,{size:13,color:C.muted});
+      const tables=[...domSlide.querySelectorAll('table')].filter(visible);
+      const boxes=[...domSlide.querySelectorAll('.box')].filter(visible);
+      const refs=[...domSlide.querySelectorAll('.canvas > ul')].filter(visible);
+      if(tables.length){ addDomTable(sl,tables[0],0.62,1.75,12.05,4.85); }
+      else if(boxes.length){
+        const n=boxes.length; const y=n>3?1.95:2.15; const gap=0.28; const cols=Math.min(n,3); const w=Math.min(5.65,(12.1-(cols-1)*gap)/cols);
+        boxes.forEach((b,i)=>{const row=Math.floor(i/3),col=i%3; const x=0.62+col*(w+gap); const h=n>3?2.05:2.75; addCard(sl,b,x,y+row*(h+0.28),w,h,[C.green,C.gold,C.green,C.red][i%4]);});
+      }
+      else if(refs.length){
+        const items=[...refs[0].querySelectorAll('li')].map(li=>'• '+clean(li.innerText)).join('\n');
+        sl.addShape(pptx.ShapeType.roundRect,{x:0.62,y:1.85,w:11.6,h:4.2,fill:{color:C.white},line:{color:C.line,pt:1}});
+        addText(sl,items,0.95,2.15,10.9,3.6,{size:15});
+      } else {
+        const ps=[...domSlide.querySelectorAll('.canvas > p')].filter(visible).map(el=>clean(el.innerText)).filter(Boolean).join('\n');
+        if(ps) addText(sl,ps,0.62,2.2,10.8,2.2,{size:16,color:C.muted});
+      }
+      addFooter(sl,idx+1,allSlides.length);
+    });
+    await pptx.writeFile({fileName:'receivables-tax-considerations-edited.pptx'});
+  }
+  document.getElementById('downloadPptx').onclick=savePowerPoint;
 </script>
 </body>
 </html>
