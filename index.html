@@ -1,366 +1,326 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>연체 매출채권 발생 시 세무상 유의사항</title>
-  <style>
-    :root{--bg0:#05070d;--bg1:#08111f;--ink:#eaf2ff;--text:#102033;--muted:#728197;--line:#dbe5f0;--blue:#00843D;--cyan:#26A65B;--mint:#00A651;--gold:#B8A15A;--red:#C2413A;--shadow:0 30px 90px rgba(0,0,0,.38)}
-    *{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:radial-gradient(circle at 12% 10%,rgba(47,109,246,.34),transparent 30%),radial-gradient(circle at 88% 12%,rgba(23,182,217,.20),transparent 26%),linear-gradient(135deg,var(--bg0),var(--bg1) 52%,#020617);color:var(--text);overflow:hidden}a{color:#1d4ed8;text-decoration:none;border-bottom:1px solid rgba(29,78,216,.35)}.deck{width:100vw;height:100vh;position:relative}.slide{position:absolute;inset:0;display:none;padding:34px 44px 76px;overflow:auto}.slide.active{display:flex;align-items:center;justify-content:center}.canvas{width:min(1180px,100%);aspect-ratio:16/9;min-height:660px;max-height:calc(100vh - 112px);background:linear-gradient(135deg,#fff 0%,#f8fbff 54%,#edf5ff 100%);border:1px solid rgba(255,255,255,.55);border-radius:32px;box-shadow:var(--shadow);padding:52px 60px 58px;position:relative;overflow:hidden}.canvas::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(47,109,246,.08),transparent 42%);pointer-events:none}.canvas::after{content:"";position:absolute;right:-140px;top:-140px;width:360px;height:360px;border-radius:999px;background:radial-gradient(circle,rgba(23,182,217,.22),rgba(47,109,246,.07) 58%,transparent 60%);pointer-events:none}.slide.dark .canvas{background:linear-gradient(135deg,rgba(16,24,39,.98),rgba(8,17,31,.98));color:var(--ink);border-color:#24344e}.slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:var(--ink)}.slide.dark .muted,.slide.dark .small{color:#9fb0c7}.slide.dark .box{background:rgba(15,23,42,.72);border-color:#263752;color:var(--ink)}.kicker{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}.kicker::before{content:"";width:34px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan))}.slide.dark .kicker{color:#7dd3fc}h1{position:relative;z-index:1;margin:0 0 18px;font-size:56px;line-height:1.04;letter-spacing:-.055em;max-width:940px}h2{position:relative;z-index:1;margin:0 0 26px;font-size:42px;line-height:1.12;letter-spacing:-.045em;max-width:980px}h3{margin:0 0 10px;font-size:21px;line-height:1.25;letter-spacing:-.025em}p,li,td,th{font-size:19px;line-height:1.45;letter-spacing:-.016em}p{margin:0 0 13px}.lead{font-size:25px;line-height:1.38;color:#334155;max-width:920px}.slide.dark .lead{color:#c9d7eb}.muted{color:var(--muted)}.small{font-size:13px;line-height:1.45;color:var(--muted)}.bar{position:relative;z-index:1;width:250px;height:9px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--mint));margin:26px 0}.grid{position:relative;z-index:1;display:grid;gap:18px}.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}.box{background:rgba(255,255,255,.78);border:1px solid rgba(213,226,241,.95);border-radius:24px;padding:22px 23px;box-shadow:0 12px 36px rgba(15,23,42,.08);backdrop-filter:blur(10px)}.box p,.box li{font-size:17.5px}.box.accent{border-top:5px solid var(--blue)}.box.warn{border-top:5px solid var(--gold)}.box.risk{border-top:5px solid var(--red)}.box.ok{border-top:5px solid var(--mint)}.big-number{font-size:62px;font-weight:950;line-height:.9;letter-spacing:-.06em;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}.note{position:relative;z-index:1;margin-top:18px;padding:14px 18px;background:#f1f5f9;border:1px solid #dbe3ef;border-left:5px solid #64748b;border-radius:16px}.note p{font-size:16px;margin:0;color:#475569}.copylink{position:absolute;left:60px;right:60px;bottom:58px;z-index:3;padding:12px 16px;border-radius:14px;background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.35);color:#dbeafe;font-size:15px;line-height:1.35;word-break:break-all}.copylink b{color:#93c5fd}.copylink span{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:14px}ul{margin:10px 0 0;padding-left:23px}li{margin:8px 0}table{position:relative;z-index:1;width:100%;border-collapse:separate;border-spacing:0;margin-top:8px;overflow:hidden;border-radius:18px;box-shadow:0 12px 36px rgba(15,23,42,.07)}th{background:#0f2a4f;color:#eaf2ff;font-size:15px;font-weight:900}td,th{padding:12px 14px;border-right:1px solid #dbe6f3;border-bottom:1px solid #dbe6f3;vertical-align:top}td{background:rgba(255,255,255,.86);font-size:16px}tr:last-child td{border-bottom:0}td:last-child,th:last-child{border-right:0}.footer{position:absolute;left:60px;right:60px;bottom:26px;display:flex;justify-content:space-between;gap:20px;color:#8fa1b8;font-size:12px;z-index:2}.footer span{font-size:12px}.slide.dark .footer{color:#7f93b2}.controls{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(7,12,22,.86);color:white;padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:999px;backdrop-filter:blur(12px);box-shadow:0 10px 35px rgba(0,0,0,.28);z-index:10}.editbar{position:fixed;right:18px;top:18px;z-index:20;display:flex;gap:8px;align-items:center;background:rgba(7,12,22,.86);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:9px 11px;color:white;backdrop-filter:blur(12px)}button{border:0;border-radius:999px;padding:8px 14px;font-weight:900;cursor:pointer;background:white;color:#0f172a}.editbar button{font-size:13px}.counter{min-width:80px;text-align:center;font-weight:900;font-size:14px}.editable{outline:0;border-radius:8px}.edit-on .editable:hover{box-shadow:0 0 0 2px rgba(47,109,246,.24);background:rgba(47,109,246,.05)}.edit-on .editable:focus{box-shadow:0 0 0 3px rgba(47,109,246,.42);background:rgba(255,255,255,.3)}.slide.dark .edit-on .editable:focus,.edit-on .slide.dark .editable:focus{background:rgba(255,255,255,.08)}.edit-hint{font-size:12px;color:#cbd5e1;padding:0 6px}
-    /* v6: white + green CI tone */
-    body{background:linear-gradient(135deg,#f7faf7 0%,#eef7ef 48%,#e4f2e7 100%);color:#173524}
-    .canvas,.slide.dark .canvas{background:linear-gradient(135deg,#ffffff 0%,#fbfdfb 56%,#eef8f0 100%);color:#173524;border-color:#d7eadb;box-shadow:0 24px 70px rgba(0,72,34,.14)}
-    .canvas::before,.slide.dark .canvas::before{background:linear-gradient(90deg,rgba(0,132,61,.08),transparent 44%)}
-    .canvas::after{background:radial-gradient(circle,rgba(0,166,81,.16),rgba(0,132,61,.06) 58%,transparent 60%)}
-    .slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:#173524}
-    .slide.dark .muted,.slide.dark .small,.muted{color:#5f7468}
-    .kicker,.slide.dark .kicker{color:#00843D}.kicker::before{background:linear-gradient(90deg,#00843D,#00A651)}
-    .bar{background:linear-gradient(90deg,#006B35,#00843D,#00A651)}
-    .box,.slide.dark .box{background:rgba(255,255,255,.86);border-color:#d9eadc;color:#173524;box-shadow:0 12px 34px rgba(0,72,34,.08)}
-    .box.accent{border-top-color:#00843D}.box.warn{border-top-color:#86A85D}.box.risk{border-top-color:#C2413A}.box.ok{border-top-color:#00A651}
-    .big-number{background:linear-gradient(135deg,#006B35,#00A651);-webkit-background-clip:text;background-clip:text;color:transparent}
-    th{background:#006B35;color:#ffffff}td{background:rgba(255,255,255,.9)}
-    .note{background:#f0f8f1;border-color:#d7eadb;border-left-color:#00843D}.note p{color:#365443}
-    .copylink{background:rgba(0,107,53,.82);border-color:rgba(255,255,255,.35);color:#effaf1}.copylink b{color:#bbf7d0}
-    .footer,.slide.dark .footer{color:#6b8172}
-    .controls,.editbar{background:rgba(0,75,37,.88);border-color:rgba(255,255,255,.22)}
-    .edit-on .editable:hover{box-shadow:0 0 0 2px rgba(0,132,61,.24);background:rgba(0,132,61,.05)}
-    .edit-on .editable:focus{box-shadow:0 0 0 3px rgba(0,132,61,.38);background:rgba(255,255,255,.55)}
-
-
-    /* v12: company CI report style based on 업무자동화 PJT 중단보고 */
-    body{background:#eef3ee;color:#1a2b1f}
-    .canvas,.slide.dark .canvas{background:#ffffff;color:#1a2b1f;border:1px solid #e5ebe5;border-radius:18px;box-shadow:0 18px 55px rgba(20,45,30,.12);padding:54px 62px 58px}
-    .canvas::before,.canvas::after,.slide.dark .canvas::before{display:none!important}
-    .canvas-header-line{position:absolute;left:62px;right:62px;top:42px;height:2px;background:#0B8F55;z-index:4}
-    .slide-logo{position:absolute;right:62px;top:20px;z-index:6;background:#133820;border-radius:8px;padding:7px 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(19,56,32,.18)}
-    .slide-logo img{width:150px;height:auto;display:block}
-    .slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:#1a2b1f}
-    .slide.dark .muted,.slide.dark .small,.muted{color:#66766b}
-    h1{color:#123D2A;font-size:52px;line-height:1.08;letter-spacing:-.045em;margin-top:10px}
-    h2{color:#123D2A;font-size:39px;line-height:1.14;letter-spacing:-.04em;margin-top:6px}
-    .lead{color:#54665a;font-size:23px}
-    .kicker,.slide.dark .kicker{height:28px;min-width:48px;padding:5px 14px;border-radius:6px;background:#0B8F55;color:#fff;font-size:13px;letter-spacing:.02em;box-shadow:0 6px 15px rgba(11,143,85,.18);margin-bottom:18px}
-    .kicker::before{display:none}
-    .bar{background:#0B8F55;height:6px;border-radius:0;width:180px}
-    .box,.slide.dark .box{background:#ffffff;border:1px solid #e1e8e1;border-radius:12px;color:#1a2b1f;box-shadow:0 10px 28px rgba(20,45,30,.08)}
-    .box.accent{border-top:4px solid #0B8F55}.box.warn{border-top:4px solid #D8A323}.box.ok{border-top:4px solid #27A86B}.box.risk{border-top:4px solid #C2413A}
-    .big-number{background:linear-gradient(135deg,#0B8F55,#2DBE75);-webkit-background-clip:text;background-clip:text;color:transparent}
-    th{background:#123D2A;color:#fff}td{background:#fff}.note{background:#F5FAF6;border-color:#DCEADF;border-left-color:#0B8F55}
-    .copylink{background:#123D2A;border-color:#123D2A;color:#fff;border-radius:8px}.copylink b{color:#9FE6B8}
-    .footer,.slide.dark .footer{left:62px;right:62px;bottom:24px;color:#7a887d;border-top:1px solid #e2e8e2;padding-top:8px}
-    .controls,.editbar{background:rgba(18,61,42,.92)}
-    .editbar .toplink{border-radius:6px}.editbar button{border-radius:6px}.controls button{border-radius:6px}
-
-
-    /* v13: Gmail final PPT tone */
-    body{background:#F4F7FA;color:#1F2933}
-    .canvas,.slide.dark .canvas{background:#FFFFFF;color:#1F2933;border:1px solid #E3E9F1;border-radius:0;box-shadow:0 18px 45px rgba(24,90,170,.10);padding:54px 62px 58px}
-    .slide.dark h1,.slide.dark h2,.slide.dark h3,.slide.dark p,.slide.dark li{color:#1F2933}
-    .slide.dark .muted,.slide.dark .small,.muted{color:#6B7280}
-    .canvas-header-line{left:62px;right:62px;top:63px;height:2px;background:#185AAA}
-    .slide-logo{right:62px;top:20px;background:transparent;border-radius:0;padding:0;box-shadow:none}
-    .slide-logo img{width:140px;height:auto}
-    .kicker,.slide.dark .kicker{height:30px;min-width:76px;padding:6px 16px;border-radius:9px;background:#185AAA;color:#fff;font-size:13px;letter-spacing:0;font-weight:800;box-shadow:0 5px 14px rgba(24,90,170,.20)}
-    h1{color:#12325F;font-size:50px;line-height:1.08;margin-top:20px}h2{color:#12325F;font-size:38px;line-height:1.14;margin-top:16px}.lead{color:#5F6B7A;font-size:22px}
-    .bar{background:#185AAA;height:4px;border-radius:0;width:160px}
-    .box,.slide.dark .box{background:#FFFFFF;border:1px solid #E3E9F1;border-radius:0;color:#1F2933;box-shadow:0 10px 26px rgba(24,90,170,.08)}
-    .box.accent{border-top:6px solid #185AAA}.box.warn{border-top:6px solid #D2A02A}.box.ok{border-top:6px solid #089462}.box.risk{border-top:6px solid #C2413A}
-    .big-number{background:linear-gradient(135deg,#185AAA,#2B6FC0);-webkit-background-clip:text;background-clip:text;color:transparent}
-    th{background:#185AAA;color:#fff}td{background:#fff}.note{background:#F0F6FD;border-color:#E3E9F1;border-left-color:#185AAA}
-    .copylink{background:#F0F6FD;border:1px solid #E3E9F1;color:#1F2933;border-radius:0}.copylink b{color:#185AAA}.copylink span{color:#1F2933}
-    .footer,.slide.dark .footer{color:#7B8794;border-top:1px solid #E3E9F1}
-    .controls,.editbar{background:rgba(18,50,95,.94)}
-
-    /* v7: resizable/deletable slide objects */
-    .design-object{position:relative;overflow:auto;min-width:42px;min-height:24px}.edit-on .design-object{resize:both}
-    .design-object.selected{box-shadow:0 0 0 3px rgba(0,132,61,.42),0 12px 34px rgba(0,72,34,.1)!important}
-    .design-object.deleted{display:none!important}
-    .obj-delete{position:absolute;right:6px;top:6px;z-index:30;width:22px;height:22px;display:none;align-items:center;justify-content:center;border-radius:999px;background:#006B35;color:white;border:1px solid rgba(255,255,255,.5);font-size:14px;font-weight:900;line-height:1;cursor:pointer;padding:0}
-    .edit-on .design-object:hover>.obj-delete,.edit-on .design-object.selected>.obj-delete{display:flex}
-    .resize-help{font-size:12px;color:#cbd5e1;padding:0 6px}
-
-    .editbar .toplink{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:8px 14px;font-weight:900;background:#ffffff;color:#0f172a;text-decoration:none;border:0;font-size:13px}
-    .editbar .edit-only{display:none}.edit-on .editbar .edit-only{display:inline-flex}.edit-on .editbar span.edit-only{display:inline}
-.ppt-status{font-size:12px;color:#d9f99d;min-width:0;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .mode-view #viewerMode,.edit-on #editMode{background:#bbf7d0;color:#064e3b}
-    table.design-object{display:block;max-width:100%;min-height:80px}
-    table.design-object tbody{display:table;width:100%;border-collapse:separate;border-spacing:0}
-    .bar.design-object{min-height:9px;min-width:80px;overflow:hidden}
-@media print{body{overflow:visible;background:white}.slide{display:block!important;position:relative;page-break-after:always;height:100vh;padding:20px}.canvas{box-shadow:none;border:1px solid #ddd;max-height:none}.controls,.editbar{display:none}}@media(max-width:800px){body{overflow:auto}.slide{padding:20px 14px 70px}.canvas{padding:30px 24px;aspect-ratio:auto;min-height:calc(100vh - 100px);max-height:none;border-radius:22px}h1{font-size:35px}h2{font-size:29px}p,li{font-size:17px}.lead{font-size:20px}.grid.two,.grid.three{grid-template-columns:1fr}.footer{left:24px;right:24px}.editbar{left:14px;right:14px;top:10px;justify-content:center}}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>연체 매출채권 발생 시 영업 실무 유의사항</title>
+<style>
+:root { --slide-w: 13.333333in; --slide-h: 7.5in; --scale: min(calc((100vw - 32px) / 13.333333in), calc((100vh - 118px) / 7.5in)); }
+* { box-sizing: border-box; }
+body { margin:0; background:#eef3f8; color:#1D2633; font-family:'Apple SD Gothic Neo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+.toolbar { position:sticky; top:0; z-index:5; display:flex; gap:10px; align-items:center; justify-content:center; padding:12px; background:rgba(11,31,77,.94); color:white; box-shadow:0 2px 10px rgba(0,0,0,.18); }
+.toolbar button,.toolbar a { border:1px solid rgba(255,255,255,.35); background:#1F75BB; color:white; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:700; cursor:pointer; }
+.toolbar .note { opacity:.75; font-size:12px; margin-left:8px; }
+.deck { display:flex; flex-direction:column; align-items:center; gap:28px; padding:24px 16px 56px; }
+.slide { position:relative; width:var(--slide-w); height:var(--slide-h); background:white; overflow:hidden; box-shadow:0 12px 38px rgba(12,39,70,.22); transform-origin:top center; }
+.ppt-shape { position:absolute; white-space:pre-wrap; line-height:1.28; padding:0.02in 0.03in; overflow:hidden; }
+.decorative { padding:0; }
+.ppt-img { position:absolute; object-fit:contain; }
+.ppt-table { position:absolute; border-collapse:collapse; table-layout:fixed; font-size:9.4pt; background:white; border:1px solid #C7D7E8; }
+.ppt-table th { background:#EAF4FB; color:#0B1F4D; font-weight:800; text-align:center; }
+.ppt-table td,.ppt-table th { border:1px solid #C7D7E8; padding:0.055in 0.06in; vertical-align:middle; line-height:1.28; overflow-wrap:break-word; }
+@media screen { .slide { transform:scale(var(--scale)); margin-bottom:calc((var(--scale) - 1) * 7.5in); } }
+@media print { body { background:white; } .toolbar { display:none; } .deck { padding:0; gap:0; } .slide { box-shadow:none; break-after:page; transform:none; } }
+</style>
 </head>
 <body>
-<div class="editbar"><button id="viewerMode" type="button">Viewer mode</button><button id="editMode" type="button">Edit mode</button><button id="downloadPptx" type="button">PowerPoint 저장</button><a class="toplink" href="receivables-tax-considerations.pptx" download>기본 PPT</a><span id="pptStatus" class="ppt-status"></span><span class="edit-hint edit-only">텍스트 수정 · 개체 모서리 드래그로 크기조절 · × 삭제</span><button id="resetEdits" class="edit-only" type="button">초기화</button></div>
-<div class="deck" id="deck">
-<section class="slide active dark"><div class="canvas">
-  <div class="kicker">개요</div>
-  <h1>연체 매출채권 발생 시<br>영업 실무 유의사항</h1>
-  <p class="lead">세무상 대손금 검토에 활용되는 채권관리 기록</p>
-  <div class="bar"></div>
-  <p class="muted">평소 진행하는 독촉, 거래처 협의, 채권대책회의 내용을 사후 확인 가능한 형태로 정리합니다.</p>
-  <div class="copylink"><b>외부 열람 링크</b> · <span>https://joshphlee96.github.io/receivables-baddebt-guide/</span></div>
-  <div class="footer"><span>Accounting & Tax / Receivables Control</span><span>1 / 12</span></div>
-</div></section>
-
-<section class="slide"><div class="canvas">
-  <div class="kicker">핵심</div>
-  <h2>영업에서 이미 하는 일을 기록으로 남기는 것</h2>
-  <div class="grid three">
-    <div class="box accent"><div class="big-number">01</div><h3>독촉</h3><p>전화만 한 경우에는 나중에 확인이 어렵습니다. 메일·문자·메신저 캡처를 같이 남깁니다.</p></div>
-    <div class="box warn"><div class="big-number">02</div><h3>협의</h3><p>거래처가 말한 지급 예정일, 자금 사정, 분할상환 계획을 짧게라도 문서로 남깁니다.</p></div>
-    <div class="box ok"><div class="big-number">03</div><h3>회의</h3><p>채권대책회의에서 정한 다음 조치와 담당자를 기록합니다.</p></div>
-  </div>
-  <div class="footer"><span>핵심 메시지</span><span>2 / 12</span></div>
-</div></section>
-
-<section class="slide dark"><div class="canvas">
-  <div class="kicker">기준</div>
-  <h2>세무상 대손금은 “못 받았다”만으로 부족합니다</h2>
-  <div class="grid two">
-    <div class="box"><h3>회계상 제각</h3><ul><li>회사 장부에서 채권을 정리하는 절차</li><li>회수 가능성이 낮다고 판단한 회계처리</li><li>내부 판단만으로 처리될 수 있음</li></ul></div>
-    <div class="box"><h3>세법상 대손금</h3><ul><li>법인세법상 정해진 사유가 필요</li><li>회수불능 사유와 시점 확인 필요</li><li>세무조사 시 객관자료로 설명 필요</li></ul></div>
-  </div>
-  <p class="muted">따라서 연체 초기부터 회수 경과를 남겨두면, 나중에 대손금 검토 시 활용할 수 있습니다.</p>
-  <div class="footer"><span>회계와 세법 차이</span><span>3 / 12</span></div>
-</div></section>
-
-<section class="slide"><div class="canvas">
-  <div class="kicker">자료</div>
-  <h2>남겨야 하는 자료 예시</h2>
-  <table>
-    <tr><th>상황</th><th>남길 자료</th><th>예시</th></tr>
-    <tr><td>지급기일 경과</td><td>독촉 메일, 문자, 메신저 캡처</td><td>“지급 예정일 회신 부탁드립니다.”</td></tr>
-    <tr><td>거래처가 지급일을 말함</td><td>거래처 회신, 통화메모</td><td>“6월 30일까지 지급 예정”</td></tr>
-    <tr><td>자금 사정으로 지연</td><td>지연 사유, 분할상환안, 지급확약서</td><td>“월 1천만원씩 3회 분할 지급”</td></tr>
-    <tr><td>연락두절 또는 폐업 정황</td><td>반송메일, 폐업조회, 방문기록, 내용증명 반송</td><td>“전화 불통, 사무실 이전, 우편 반송”</td></tr>
-    <tr><td>추가거래 진행</td><td>승인자, 선입금 조건, 기존채권 회수계획</td><td>“기존채권 회수 전 신규출고 보류”</td></tr>
-  </table>
-  <div class="footer"><span>기록 예시</span><span>4 / 12</span></div>
-</div></section>
-
-<section class="slide"><div class="canvas">
-  <div class="kicker">예시</div>
-  <h2>독촉 메일 예시</h2>
-  <div class="grid two">
-    <div class="box accent"><h3>1차 독촉</h3><p>제목: 미수금 지급 일정 확인 요청</p><p>귀사에 청구드린 아래 채권의 지급기일이 경과하여 지급 예정일 확인을 요청드립니다. 지급이 지연되는 사유가 있는 경우 함께 회신 부탁드립니다.</p><ul><li>청구금액:</li><li>지급기일:</li><li>현재 연체일수:</li></ul></div>
-    <div class="box warn"><h3>지급계획 요청</h3><p>내부 채권관리 및 회계처리를 위해 지급 예정일 또는 분할상환 계획을 서면으로 회신 부탁드립니다.</p><p>회신이 어려운 경우 담당자와 통화 가능한 일정을 알려주시기 바랍니다.</p></div>
-  </div>
-  <div class="footer"><span>메일 예시</span><span>5 / 12</span></div>
-</div></section>
-
-<section class="slide"><div class="canvas">
-  <div class="kicker">내용증명</div>
-  <h2>내용증명은 언제 검토할까</h2>
-  <div class="grid three">
-    <div class="box accent"><h3>검토 시점</h3><ul><li>장기 연체</li><li>지급 약속 반복 불이행</li><li>담당자 연락두절</li><li>폐업 또는 이전 정황</li></ul></div>
-    <div class="box warn"><h3>남는 효과</h3><ul><li>회사가 공식적으로 지급을 요청한 기록</li><li>발송일과 수령·반송 여부 확인</li><li>향후 법무·세무 검토자료</li></ul></div>
-    <div class="box ok"><h3>보관 자료</h3><ul><li>내용증명 본문</li><li>우체국 발송증</li><li>배달증명 또는 반송봉투</li><li>후속 회신</li></ul></div>
-  </div>
-  <div class="footer"><span>내용증명</span><span>6 / 12</span></div>
-</div></section>
-
-<section class="slide dark"><div class="canvas">
-  <div class="kicker">판례</div>
-  <h2>판례 사례: 회수수단이 있었는지 확인</h2>
-  <div class="grid two">
-    <div class="box"><h3>사안의 포인트</h3><ul><li>부도어음금 관련 대손 처리</li><li>담보권 행사, 수수료 상계 등 회수수단 존재 여부가 문제됨</li><li>회수절차 없이 대손 처리한 부분이 쟁점</li></ul></div>
-    <div class="box"><h3>영업 실무상 시사점</h3><ul><li>담보, 상계, 선입금 조건이 있으면 자료로 남김</li><li>조치를 하지 않은 경우 그 사유를 회의자료에 기재</li><li>추가거래를 계속하는 경우 승인근거와 회수계획을 기록</li></ul></div>
-  </div>
-  <p class="small">공식 링크: <a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2062359&c=900" target="_blank">대법원 2008.12.11. 선고 2006두18652 — 사법정보공개포털</a></p>
-  <div class="footer"><span>판례 사례 1</span><span>7 / 12</span></div>
-</div></section>
-
-<section class="slide"><div class="canvas">
-  <div class="kicker">판례</div>
-  <h2>판례 사례: 손금 관련 자료는 회사 쪽 자료가 중요</h2>
-  <div class="grid two">
-    <div class="box accent"><h3>사안의 포인트</h3><ul><li>손금에 관한 사실관계는 회사 내부 자료에 있는 경우가 많음</li><li>과세관청이 확인하기 어려운 자료는 납세자가 설명해야 할 수 있음</li><li>자료가 없으면 회사 주장을 뒷받침하기 어려움</li></ul></div>
-    <div class="box warn"><h3>영업 실무상 시사점</h3><ul><li>독촉 여부는 담당자 메모보다 메일·문자 기록이 유리</li><li>거래처가 말한 지급계획은 회신 형태로 보관</li><li>채권대책회의 자료에 다음 조치와 담당자를 남김</li></ul></div>
-  </div>
-  <p class="small">공식 링크: <a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2140791&c=900" target="_blank">대법원 2013.10.31. 선고 2010두4599 — 사법정보공개포털</a></p>
-  <div class="footer"><span>판례 사례 2</span><span>8 / 12</span></div>
-</div></section>
-
-<section class="slide"><div class="canvas">
-  <div class="kicker">회의자료</div>
-  <h2>채권대책회의 자료에 추가하면 좋은 항목</h2>
-  <table>
-    <tr><th>항목</th><th>기재 예시</th></tr>
-    <tr><td>최종 독촉일 / 방식</td><td>2026.05.10 / 이메일, 문자, 내용증명</td></tr>
-    <tr><td>거래처 회신</td><td>5월 말 지급 예정 / 자금집행 지연 / 회신 없음</td></tr>
-    <tr><td>회수계획</td><td>분할상환 협의 / 선입금 조건 / 상계 검토</td></tr>
-    <tr><td>추가거래 여부</td><td>중단 / 제한거래 / 승인 후 진행</td></tr>
-    <tr><td>다음 조치</td><td>2차 독촉 / 내용증명 요청 / 법무검토 요청</td></tr>
-    <tr><td>세무 검토 참고사항</td><td>거래처 상태자료 확인 필요 / 회수불능 사유 발생 여부 확인 필요</td></tr>
-  </table>
-  <div class="footer"><span>회의자료</span><span>9 / 12</span></div>
-</div></section>
-
-<section class="slide"><div class="canvas">
-  <div class="kicker">기록예시</div>
-  <h2>기록 방식 예시</h2>
-  <table>
-    <tr><th>상황</th><th>부족한 기록</th><th>보완된 기록</th></tr>
-    <tr><td>전화 독촉</td><td>“전화함”</td><td>“5/10 14:30 김OO 과장 통화. 5/31 지급 예정이라고 답변. 지급계획 메일 요청함.”</td></tr>
-    <tr><td>지급 지연</td><td>“자금 사정”</td><td>“거래처 회신: 발주처 입금 지연으로 6/15 지급 예정. 회신메일 첨부.”</td></tr>
-    <tr><td>추가거래</td><td>“영업상 필요”</td><td>“기존채권 회수 전 신규출고 보류. 단, 선입금 조건 거래는 본부장 승인 후 진행.”</td></tr>
-    <tr><td>연락두절</td><td>“연락 안 됨”</td><td>“5/10, 5/15, 5/20 전화 불통. 5/21 독촉메일 반송. 내용증명 발송 검토.”</td></tr>
-  </table>
-  <div class="footer"><span>기록 예시</span><span>10 / 12</span></div>
-</div></section>
-
-<section class="slide"><div class="canvas">
-  <div class="kicker">체크리스트</div>
-  <h2>연체채권별 확인 체크리스트</h2>
-  <div class="grid two">
-    <div class="box accent"><h3>거래처 커뮤니케이션</h3><ul><li>독촉 메일 또는 문자 기록이 있는가</li><li>지급 예정일을 확인했는가</li><li>지급 지연 사유를 남겼는가</li><li>지급계획 또는 확약을 요청했는가</li></ul></div>
-    <div class="box ok"><h3>내부 관리</h3><ul><li>채권대책회의 안건에 포함했는가</li><li>다음 조치와 담당자가 정해졌는가</li><li>추가거래 여부와 승인근거가 있는가</li><li>내용증명·법무검토 필요성을 검토했는가</li></ul></div>
-  </div>
-  <div class="footer"><span>체크리스트</span><span>11 / 12</span></div>
-</div></section>
-
-<section class="slide dark"><div class="canvas">
-  <div class="kicker">근거</div>
-  <h2>공식 근거자료</h2>
-  <ul>
-    <li><a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">법인세법 제19조의2</a></li>
-    <li><a href="https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C19%EC%A1%B0%EC%9D%982" target="_blank">법인세법 시행령 제19조의2</a></li>
-    <li><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2062359&c=900" target="_blank">대법원 2008.12.11. 선고 2006두18652 — 사법정보공개포털</a></li>
-    <li><a href="https://portal.scourt.go.kr/pgp/main.on?w2xPath=PGP1011M04&jisCntntsSrno=2140791&c=900" target="_blank">대법원 2013.10.31. 선고 2010두4599 — 사법정보공개포털</a></li>
-    <li><a href="https://www.scourt.go.kr/portal/news/NewsViewAction.work?seqnum=10645&gubun=4" target="_blank">대법원 2025.9.11. 선고 2024두60435 — 대법원</a></li>
-  </ul>
-  <div class="footer"><span>References</span><span>12 / 12</span></div>
-</div></section>
+<div class="toolbar">
+  <button onclick="prevSlide()">이전</button>
+  <button onclick="nextSlide()">다음</button>
+  <a href="receivables-tax-considerations.pptx" download>PPT 다운로드</a>
+  <span id="counter">1 / 12</span>
+  <span class="note">PPTX를 파싱해 생성한 HTML 미리보기</span>
 </div>
-<div class="controls"><button id="prev" type="button">← 이전</button><div class="counter" id="counter">1 / 12</div><button id="next" type="button">다음 →</button></div>
-<script src="pptxgen.bundle.js"></script>
+<main class="deck">
+<section class="slide" id="s1">
+<div class="ppt-shape decorative" style="left:7.7500in;top:3.3500in;width:6.0000in;height:4.0700in;background:transparent;border:18.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.7000in;top:3.7500in;width:5.2500in;height:3.8500in;background:transparent;border:9.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.4500in;top:4.2500in;width:3.4000in;height:3.2500in;background:transparent;border:11.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.0500in;top:3.1200in;width:3.7300in;height:4.3300in;background:transparent;border:5.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_1.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:1.8000in;width:2.3400in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:1.9300in;width:2.3400in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:11.00pt;color:#FFFFFF;font-weight:700;">AR/TAX REVIEW</div>
+<div class="ppt-shape decorative" style="left:3.3000in;top:2.0300in;width:9.1600in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:2.8200in;width:10.8000in;height:0.8200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:24.00pt;color:#0B1F4D;font-weight:700;">연체 매출채권 발생 시<br>영업 실무 유의사항</div>
+<div class="ppt-shape" style="left:0.8800in;top:3.6200in;width:9.8000in;height:0.2200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">연체채권 관리  /  세무상 대손금 검토  /  객관자료 보관</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:4.3300in;width:11.6000in;height:0.0100in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8800in;top:4.5500in;width:7.7000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:15.00pt;color:#1D2633;font-weight:700;">독촉·협의·채권대책회의 내용을 사후 확인 가능한 자료로 정리</div>
+<div class="ppt-shape" style="left:5.3500in;top:5.5200in;width:2.7000in;height:0.4400in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:18.00pt;color:#0B1F4D;font-weight:700;">기획관리부 회계팀</div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 1 / 12 —</div>
+</section><section class="slide" id="s2">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_2.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:1.8900in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:1.8900in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">KEY POINT</div>
+<div class="ppt-shape decorative" style="left:2.8700in;top:0.9900in;width:9.6300in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">기존 채권관리 업무의 기록 보완</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">전화·메일·회의를 세무 검토 가능한 객관자료로 남기는 것이 핵심</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 2 / 12 —</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6200in;width:3.7200in;height:1.7200in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6200in;width:3.7200in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0000in;top:2.7200in;width:3.4400in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">독촉</div>
+<div class="ppt-shape" style="left:1.0000in;top:3.1700in;width:3.4400in;height:1.0400in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:12.00pt;color:#1D2633;font-weight:400;">전화 독촉은 통화일시·상대방·답변내용을 함께 기재합니다.</div>
+<div class="ppt-shape decorative" style="left:4.8200in;top:2.6200in;width:3.7200in;height:1.7200in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:4.8200in;top:2.6200in;width:3.7200in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:4.9600in;top:2.7200in;width:3.4400in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">협의</div>
+<div class="ppt-shape" style="left:4.9600in;top:3.1700in;width:3.4400in;height:1.0400in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:12.00pt;color:#1D2633;font-weight:400;">지급 예정일, 지연 사유, 분할상환 계획은 회신자료 또는 통화메모로 보관합니다.</div>
+<div class="ppt-shape decorative" style="left:8.7800in;top:2.6200in;width:3.7200in;height:1.7200in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.7800in;top:2.6200in;width:3.7200in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:8.9200in;top:2.7200in;width:3.4400in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">회의</div>
+<div class="ppt-shape" style="left:8.9200in;top:3.1700in;width:3.4400in;height:1.0400in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:12.00pt;color:#1D2633;font-weight:400;">채권대책회의 결과는 다음 조치, 담당자, 예정일 기준으로 정리합니다.</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:4.7500in;width:11.6400in;height:0.6200in;background:#F7FAFC;border:0.6pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:4.7500in;width:0.0600in;height:0.6200in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0400in;top:4.9100in;width:11.3400in;height:0.5200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.80pt;color:#0B1F4D;font-weight:700;">핵심은 채권 회수 노력과 의사결정 과정을 사후에 설명 가능한 형태로 남기는 것</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:5.6200in;width:11.6400in;height:1.0000in;background:#FFFFFF;border:0.6pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:1.0400in;top:5.8400in;width:0.3200in;height:0.3200in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0400in;top:5.9000in;width:0.3200in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.00pt;color:#FFFFFF;font-weight:700;">1</div>
+<div class="ppt-shape" style="left:1.4600in;top:5.8200in;width:3.0000in;height:0.2200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.20pt;color:#0B1F4D;font-weight:700;">기록 보완</div>
+<div class="ppt-shape" style="left:1.4600in;top:6.1000in;width:3.0000in;height:0.2200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:9.69pt;color:#1D2633;font-weight:400;">통화·메일·회의자료의 누락 방지</div>
+<div class="ppt-shape decorative" style="left:4.8900in;top:5.8400in;width:0.3200in;height:0.3200in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:4.8900in;top:5.9000in;width:0.3200in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.00pt;color:#FFFFFF;font-weight:700;">2</div>
+<div class="ppt-shape" style="left:5.3100in;top:5.8200in;width:3.0000in;height:0.2200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.20pt;color:#0B1F4D;font-weight:700;">세무 대응</div>
+<div class="ppt-shape" style="left:5.3100in;top:6.1000in;width:3.0000in;height:0.2200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:9.69pt;color:#1D2633;font-weight:400;">대손금 검토 시 객관자료 확보</div>
+<div class="ppt-shape decorative" style="left:8.7400in;top:5.8400in;width:0.3200in;height:0.3200in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:8.7400in;top:5.9000in;width:0.3200in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.00pt;color:#FFFFFF;font-weight:700;">3</div>
+<div class="ppt-shape" style="left:9.1600in;top:5.8200in;width:3.0000in;height:0.2200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.20pt;color:#0B1F4D;font-weight:700;">관리 체계</div>
+<div class="ppt-shape" style="left:9.1600in;top:6.1000in;width:3.0000in;height:0.2200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:9.69pt;color:#1D2633;font-weight:400;">후속조치·담당자·예정일 명확화</div>
+</section><section class="slide" id="s3">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_3.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:1.8900in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:1.8900in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">TAX BASIS</div>
+<div class="ppt-shape decorative" style="left:2.8700in;top:0.9900in;width:9.6300in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">세무상 대손금 검토 시 객관자료 확인 필요</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">연체 초기부터 회수 경과를 정리해 두면 이후 대손금 검토자료로 활용 가능</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 3 / 12 —</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:5.5500in;height:2.8500in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.9800in;top:2.6700in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.9800in;top:2.7200in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">01</div>
+<div class="ppt-shape" style="left:1.3300in;top:2.7000in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">회계상 제각</div>
+<div class="ppt-shape" style="left:0.9900in;top:3.1500in;width:5.2900in;height:2.1700in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:12.20pt;color:#1D2633;font-weight:400;">• 회사 장부에서 채권을 정리하는 절차<br>• 회수 가능성이 낮다고 판단한 회계처리<br>• 내부 판단만으로 처리될 수 있음</div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.6000in;width:5.5500in;height:2.8500in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.6000in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:7.0700in;top:2.6700in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:7.0700in;top:2.7200in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">02</div>
+<div class="ppt-shape" style="left:7.4200in;top:2.7000in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">세법상 대손금</div>
+<div class="ppt-shape" style="left:7.0800in;top:3.1500in;width:5.2900in;height:2.1700in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:12.20pt;color:#1D2633;font-weight:400;">• 법인세법상 정해진 사유가 필요<br>• 회수불능 사유와 시점 확인 필요<br>• 세무조사 시 객관자료로 설명 필요</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:6.2000in;width:11.6400in;height:0.6200in;background:#F7FAFC;border:0.6pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:6.2000in;width:0.0600in;height:0.6200in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0400in;top:6.3600in;width:11.3400in;height:0.5200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.80pt;color:#0B1F4D;font-weight:700;">회계상 정리와 세법상 손금 인정은 별개입니다. 세무상 설명 가능한 자료를 별도로 축적해야 합니다.</div>
+</section><section class="slide" id="s4">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_4.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:1.7600in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:1.7600in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">EVIDENCE</div>
+<div class="ppt-shape decorative" style="left:2.7400in;top:0.9900in;width:9.7600in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">상황별 보관자료 예시</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">연체 상황별로 남겨야 할 자료와 문구 예시</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 4 / 12 —</div>
+<table class="ppt-table" style="left:0.8600in;top:2.5500in;width:11.6400in;height:3.8000in;"><tr><th>상황</th><th>남길 자료</th><th>예시</th></tr><tr><td>지급기일 경과</td><td>독촉 메일, 문자, 메신저 캡처</td><td>“지급 예정일 회신 부탁드립니다.”</td></tr><tr><td>거래처가 지급일을 말함</td><td>거래처 회신, 통화메모</td><td>“6월 30일까지 지급 예정”</td></tr><tr><td>자금 사정으로 지연</td><td>지연 사유, 분할상환안, 지급확약서</td><td>“월 1천만원씩 3회 분할 지급”</td></tr><tr><td>연락두절 또는 폐업 정황</td><td>반송메일, 폐업조회, 방문기록, 내용증명 반송</td><td>“전화 불통, 사무실 이전, 우편 반송”</td></tr><tr><td>추가거래 진행</td><td>승인자, 선입금 조건, 기존채권 회수계획</td><td>“기존채권 회수 전 신규출고 보류”</td></tr></table>
+</section><section class="slide" id="s5">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_5.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:2.1500in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:2.1500in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">MAIL SAMPLE</div>
+<div class="ppt-shape decorative" style="left:3.1300in;top:0.9900in;width:9.3700in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">독촉 메일 예시</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">영업 실무에서 바로 붙여 쓸 수 있는 1차 독촉 및 지급계획 요청 문구</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 5 / 12 —</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.5500in;width:5.5500in;height:3.4500in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.5500in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.9800in;top:2.6200in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.9800in;top:2.6700in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">01</div>
+<div class="ppt-shape" style="left:1.3300in;top:2.6500in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">1차 독촉</div>
+<div class="ppt-shape" style="left:1.0000in;top:3.1000in;width:5.2700in;height:2.7700in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.60pt;color:#1D2633;font-weight:400;">제목: 미수금 지급 일정 확인 요청<br><br>귀사에 청구드린 아래 채권의 지급기일이 경과하여 지급 예정일 확인을 요청드립니다. 지급이 지연되는 사유가 있는 경우 함께 회신 부탁드립니다.<br><br>• 청구금액:<br>• 지급기일:<br>• 현재 연체일수:</div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.5500in;width:5.5500in;height:3.4500in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.5500in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:7.0700in;top:2.6200in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:7.0700in;top:2.6700in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">02</div>
+<div class="ppt-shape" style="left:7.4200in;top:2.6500in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">지급계획 요청</div>
+<div class="ppt-shape" style="left:7.0900in;top:3.1000in;width:5.2700in;height:2.7700in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.10pt;color:#1D2633;font-weight:400;">내부 채권관리 및 회계처리를 위해 지급 예정일 또는 분할상환 계획을 서면으로 회신 부탁드립니다.<br><br>회신이 어려운 경우 담당자와 통화 가능한 일정을 알려주시기 바랍니다.</div>
+</section><section class="slide" id="s6">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_6.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:2.5400in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:2.5400in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">CERTIFIED MAIL</div>
+<div class="ppt-shape decorative" style="left:3.5200in;top:0.9900in;width:8.9800in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">내용증명 검토가 필요한 경우</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">장기 연체·약속 불이행·연락두절 등 공식 요청 기록이 필요한 상황</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 6 / 12 —</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6200in;width:3.7200in;height:2.3500in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6200in;width:3.7200in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0000in;top:2.7200in;width:3.4400in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">검토 시점</div>
+<div class="ppt-shape" style="left:0.9900in;top:3.1700in;width:3.4600in;height:1.6700in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#1D2633;font-weight:400;">• 장기 연체<br>• 지급 약속 반복 불이행<br>• 담당자 연락두절<br>• 폐업 또는 이전 정황</div>
+<div class="ppt-shape decorative" style="left:4.8200in;top:2.6200in;width:3.7200in;height:2.3500in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:4.8200in;top:2.6200in;width:3.7200in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:4.9600in;top:2.7200in;width:3.4400in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">남는 효과</div>
+<div class="ppt-shape" style="left:4.9500in;top:3.1700in;width:3.4600in;height:1.6700in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#1D2633;font-weight:400;">• 공식적으로 지급 요청한 기록<br>• 발송일과 수령·반송 여부 확인<br>• 향후 법무·세무 검토자료</div>
+<div class="ppt-shape decorative" style="left:8.7800in;top:2.6200in;width:3.7200in;height:2.3500in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.7800in;top:2.6200in;width:3.7200in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:8.9200in;top:2.7200in;width:3.4400in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">보관 자료</div>
+<div class="ppt-shape" style="left:8.9100in;top:3.1700in;width:3.4600in;height:1.6700in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#1D2633;font-weight:400;">• 내용증명 본문<br>• 우체국 발송증<br>• 배달증명 또는 반송봉투<br>• 후속 회신</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:5.6000in;width:11.6400in;height:0.6200in;background:#F7FAFC;border:0.6pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:5.6000in;width:0.0600in;height:0.6200in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0400in;top:5.7600in;width:11.3400in;height:0.5200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.80pt;color:#0B1F4D;font-weight:700;">내용증명은 회수수단 자체보다 ‘공식적으로 회수를 요청했다’는 기록을 남기는 효과가 큽니다.</div>
+</section><section class="slide" id="s7">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_7.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:1.5000in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:1.5000in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">CASE 1</div>
+<div class="ppt-shape decorative" style="left:2.4800in;top:0.9900in;width:10.0200in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">판례 사례: 회수수단 존재 여부</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">회수 가능 수단을 검토했는지, 하지 않았다면 그 사유를 자료로 남겨야 함</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 7 / 12 —</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:5.5500in;height:3.0000in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.9800in;top:2.6700in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.9800in;top:2.7200in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">01</div>
+<div class="ppt-shape" style="left:1.3300in;top:2.7000in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">쟁점</div>
+<div class="ppt-shape" style="left:0.9900in;top:3.1500in;width:5.2900in;height:2.3200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.20pt;color:#1D2633;font-weight:400;">• 부도어음금 관련 대손 처리<br>• 담보권 행사, 수수료 상계 등 회수수단 존재 여부가 문제됨<br>• 회수절차 없이 대손 처리한 부분이 쟁점</div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.6000in;width:5.5500in;height:3.0000in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.6000in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:7.0700in;top:2.6700in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:7.0700in;top:2.7200in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">02</div>
+<div class="ppt-shape" style="left:7.4200in;top:2.7000in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">실무 참고사항</div>
+<div class="ppt-shape" style="left:7.0800in;top:3.1500in;width:5.2900in;height:2.3200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.20pt;color:#1D2633;font-weight:400;">• 담보, 상계, 선입금 조건이 있으면 자료로 남김<br>• 조치를 하지 않은 경우 그 사유를 회의자료에 기재<br>• 추가거래를 계속하는 경우 승인근거와 회수계획을 기록</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:6.2000in;width:11.6400in;height:0.5800in;background:#F7FAFC;border:0.6pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:6.2000in;width:0.0600in;height:0.5800in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0400in;top:6.3600in;width:11.3400in;height:0.4800in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.80pt;color:#0B1F4D;font-weight:700;">회수수단이 남아 있었다면 ‘왜 행사하지 않았는지’까지 설명 가능해야 합니다.</div>
+</section><section class="slide" id="s8">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_8.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:1.5000in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:1.5000in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">CASE 2</div>
+<div class="ppt-shape decorative" style="left:2.4800in;top:0.9900in;width:10.0200in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">판례 사례: 손금 관련 입증자료</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">손금 관련 사실관계는 회사 내부 자료에 있는 경우가 많아 납세자 설명자료가 중요</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 8 / 12 —</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:5.5500in;height:3.0000in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.9800in;top:2.6700in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.9800in;top:2.7200in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">01</div>
+<div class="ppt-shape" style="left:1.3300in;top:2.7000in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">쟁점</div>
+<div class="ppt-shape" style="left:0.9900in;top:3.1500in;width:5.2900in;height:2.3200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#1D2633;font-weight:400;">• 손금에 관한 사실관계는 회사 내부 자료에 있는 경우가 많음<br>• 과세관청이 확인하기 어려운 자료는 납세자가 설명해야 할 수 있음<br>• 자료가 없으면 회사 주장을 뒷받침하기 어려움</div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.6000in;width:5.5500in;height:3.0000in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.6000in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:7.0700in;top:2.6700in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:7.0700in;top:2.7200in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">02</div>
+<div class="ppt-shape" style="left:7.4200in;top:2.7000in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">실무 참고사항</div>
+<div class="ppt-shape" style="left:7.0800in;top:3.1500in;width:5.2900in;height:2.3200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#1D2633;font-weight:400;">• 독촉 여부는 담당자 메모보다 메일·문자 기록이 유리<br>• 거래처가 말한 지급계획은 회신 형태로 보관<br>• 채권대책회의 자료에 다음 조치와 담당자를 남김</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:6.2000in;width:11.6400in;height:0.5800in;background:#F7FAFC;border:0.6pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:6.2000in;width:0.0600in;height:0.5800in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0400in;top:6.3600in;width:11.3400in;height:0.4800in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.80pt;color:#0B1F4D;font-weight:700;">담당자 기억이 아니라 파일·메일·회의록으로 남아 있어야 세무 검토자료가 됩니다.</div>
+</section><section class="slide" id="s9">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_9.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:2.2800in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:2.2800in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">MEETING NOTE</div>
+<div class="ppt-shape decorative" style="left:3.2600in;top:0.9900in;width:9.2400in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">채권대책회의 자료 보완 항목</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">회의자료는 다음 조치와 세무 검토 포인트까지 포함해야 함</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 9 / 12 —</div>
+<table class="ppt-table" style="left:0.8600in;top:2.5500in;width:11.6400in;height:3.9500in;"><tr><th>항목</th><th>기재 예시</th></tr><tr><td>최종 독촉일 / 방식</td><td>2026.05.10 / 이메일, 문자, 내용증명</td></tr><tr><td>거래처 회신</td><td>5월 말 지급 예정 / 자금집행 지연 / 회신 없음</td></tr><tr><td>회수계획</td><td>분할상환 협의 / 선입금 조건 / 상계 검토</td></tr><tr><td>추가거래 여부</td><td>중단 / 제한거래 / 승인 후 진행</td></tr><tr><td>다음 조치</td><td>2차 독촉 / 내용증명 요청 / 법무검토 요청</td></tr><tr><td>세무 검토 참고사항</td><td>거래처 상태자료 확인 필요 / 회수불능 사유 발생 여부 확인 필요</td></tr></table>
+</section><section class="slide" id="s10">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_10.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:1.8900in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:1.8900in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">RECORDING</div>
+<div class="ppt-shape decorative" style="left:2.8700in;top:0.9900in;width:9.6300in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">기록 방식 개선 예시</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">단순 메모를 사후 검증 가능한 기록으로 바꾸는 방식</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 10 / 12 —</div>
+<table class="ppt-table" style="left:0.8600in;top:2.5500in;width:11.6400in;height:3.9500in;"><tr><th>상황</th><th>단순 기록</th><th>권장 기록</th></tr><tr><td>전화 독촉</td><td>“전화함”</td><td>“5/10 14:30 김OO 과장 통화. 5/31 지급 예정이라고 답변. 지급계획 메일 요청함.”</td></tr><tr><td>지급 지연</td><td>“자금 사정”</td><td>“거래처 회신: 발주처 입금 지연으로 6/15 지급 예정. 회신메일 첨부.”</td></tr><tr><td>추가거래</td><td>“영업상 필요”</td><td>“기존채권 회수 전 신규출고 보류. 단, 선입금 조건 거래는 본부장 승인 후 진행.”</td></tr><tr><td>연락두절</td><td>“연락 안 됨”</td><td>“5/10, 5/15, 5/20 전화 불통. 5/21 독촉메일 반송. 내용증명 발송 검토.”</td></tr></table>
+</section><section class="slide" id="s11">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_11.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:1.8900in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:1.8900in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">CHECKLIST</div>
+<div class="ppt-shape decorative" style="left:2.8700in;top:0.9900in;width:9.6300in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">연체채권 확인 체크리스트</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">자료 보관과 내부 조치가 누락되지 않았는지 확인</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 11 / 12 —</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:5.5500in;height:3.2000in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.9800in;top:2.6700in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.9800in;top:2.7200in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">01</div>
+<div class="ppt-shape" style="left:1.3300in;top:2.7000in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">거래처 커뮤니케이션</div>
+<div class="ppt-shape" style="left:0.9900in;top:3.1500in;width:5.2900in;height:2.5200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.20pt;color:#1D2633;font-weight:400;">• 독촉 메일 또는 문자 기록이 있는가<br>• 지급 예정일을 확인했는가<br>• 지급 지연 사유를 남겼는가<br>• 지급계획 또는 확약을 요청했는가</div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.6000in;width:5.5500in;height:3.2000in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:6.9500in;top:2.6000in;width:5.5500in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:7.0700in;top:2.6700in;width:0.2700in;height:0.2700in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:7.0700in;top:2.7200in;width:0.2700in;height:0.1500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:6.80pt;color:#FFFFFF;font-weight:700;">02</div>
+<div class="ppt-shape" style="left:7.4200in;top:2.7000in;width:4.9700in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">내부 관리</div>
+<div class="ppt-shape" style="left:7.0800in;top:3.1500in;width:5.2900in;height:2.5200in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.20pt;color:#1D2633;font-weight:400;">• 채권대책회의 안건에 포함했는가<br>• 다음 조치와 담당자가 정해졌는가<br>• 추가거래 여부와 승인근거가 있는가<br>• 내용증명·법무검토 필요성을 검토했는가</div>
+</section><section class="slide" id="s12">
+<div class="ppt-shape decorative" style="left:8.0500in;top:3.4500in;width:5.8000in;height:4.0000in;background:transparent;border:16.0pt solid #BFEAF5;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:8.9500in;top:3.8500in;width:5.0500in;height:3.8000in;background:transparent;border:7.0pt solid #8CC6E9;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.6500in;top:4.3500in;width:3.3000in;height:3.2000in;background:transparent;border:9.0pt solid #9AE3DB;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:10.2500in;top:3.2500in;width:3.6000in;height:4.2500in;background:transparent;border:4.0pt solid #B4D6F2;border-radius:0;"></div>
+<img class="ppt-img" src="ppt-main-html-assets/img_12.png" style="left:10.6500in;top:0.1800in;width:1.9500in;height:0.2780in;" />
+<div class="ppt-shape decorative" style="left:0.8200in;top:0.7200in;width:2.0200in;height:0.5200in;background:#1F75BB;border:none;border-radius:0.10in;"></div>
+<div class="ppt-shape" style="left:0.8200in;top:0.8600in;width:2.0200in;height:0.2400in;background:transparent;border:none;border-radius:0;font-family:'Georgia','Apple SD Gothic Neo',sans-serif;font-size:10.80pt;color:#FFFFFF;font-weight:700;">REFERENCES</div>
+<div class="ppt-shape decorative" style="left:3.0000in;top:0.9900in;width:9.5000in;height:0.0180in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:0.8600in;top:1.4300in;width:9.8000in;height:0.4200in;background:transparent;border:none;border-radius:0;font-family:'AppleMyungjo','Apple SD Gothic Neo',sans-serif;font-size:22.00pt;color:#0B1F4D;font-weight:700;">공식 근거자료</div>
+<div class="ppt-shape" style="left:0.8800in;top:1.8800in;width:10.8000in;height:0.2500in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:10.50pt;color:#65758B;font-weight:400;">세무상 대손금 검토와 판례 참고자료</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.2200in;width:11.6400in;height:0.0120in;background:#C7D7E8;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:11.8300in;top:7.1000in;width:1.2600in;height:0.2000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:8.50pt;color:#405066;font-weight:400;">— 12 / 12 —</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:11.6400in;height:2.8500in;background:#FFFFFF;border:0.7pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:2.6000in;width:11.6400in;height:0.4000in;background:#EAF4FB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0000in;top:2.7000in;width:11.3600in;height:0.2100in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.50pt;color:#0B1F4D;font-weight:700;">법령 및 판례</div>
+<div class="ppt-shape" style="left:0.9900in;top:3.1500in;width:11.3800in;height:2.1700in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.00pt;color:#1D2633;font-weight:400;">• 법인세법 제19조의2<br>• 법인세법 시행령 제19조의2<br>• 대법원 2008.12.11. 선고 2006두18652 — 사법정보공개포털<br>• 대법원 2013.10.31. 선고 2010두4599 — 사법정보공개포털<br>• 대법원 2025.9.11. 선고 2024두60435 — 대법원</div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:6.0500in;width:11.6400in;height:0.7000in;background:#F7FAFC;border:0.6pt solid #C7D7E8;border-radius:0;"></div>
+<div class="ppt-shape decorative" style="left:0.8600in;top:6.0500in;width:0.0600in;height:0.7000in;background:#1F75BB;border:none;border-radius:0;"></div>
+<div class="ppt-shape" style="left:1.0400in;top:6.2100in;width:11.3400in;height:0.6000in;background:transparent;border:none;border-radius:0;font-family:'Apple SD Gothic Neo','Apple SD Gothic Neo',sans-serif;font-size:11.80pt;color:#0B1F4D;font-weight:700;">실무 결론: 연체 발생 초기부터 회수 노력·거래처 답변·회의 의사결정을 자료화해야 합니다.</div>
+</section>
+</main>
 <script>
-  function addCiHeaders(){document.querySelectorAll('.canvas').forEach(c=>{if(c.querySelector('.slide-logo'))return;const line=document.createElement('div');line.className='canvas-header-line';const logo=document.createElement('div');logo.className='slide-logo';logo.innerHTML='<img src="assets/sangah-logo.png" alt="상아프론테크">';c.prepend(line,logo);});}
-  addCiHeaders();
-  const slides=[...document.querySelectorAll('.slide')];const counter=document.getElementById('counter');let idx=0;function show(n){idx=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));counter.textContent=`${idx+1} / ${slides.length}`;history.replaceState(null,'',`#${idx+1}`)}document.getElementById('prev').onclick=()=>show(idx-1);document.getElementById('next').onclick=()=>show(idx+1);document.addEventListener('keydown',e=>{if(document.activeElement?.isContentEditable)return;if(['ArrowRight','PageDown',' '].includes(e.key))show(idx+1);if(['ArrowLeft','PageUp'].includes(e.key))show(idx-1);if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});const start=parseInt(location.hash.replace('#',''),10);if(start>=1&&start<=slides.length)show(start-1);
-  const EDIT_PASSWORD='9302';
-  document.body.classList.add('mode-view');
-  const selector='h1,h2,h3,p,li,td,th,.kicker,.big-number,.footer span,.copylink span';
-  const editables=[...document.querySelectorAll(selector)].filter(el=>!el.closest('.controls')&&!el.closest('.editbar'));
-  editables.forEach((el,i)=>{el.contentEditable='false';el.spellcheck=false;el.classList.add('editable');el.dataset.editId='e'+i;const saved=localStorage.getItem('receivablesGuide:'+el.dataset.editId);if(saved!==null)el.innerHTML=saved;el.addEventListener('input',()=>{if(document.body.classList.contains('edit-on'))localStorage.setItem('receivablesGuide:'+el.dataset.editId,el.innerHTML)});});
-  const objSelector='.box,table,.bar,.note,.copylink';
-  const objects=[...document.querySelectorAll(objSelector)].filter(el=>!el.closest('.controls')&&!el.closest('.editbar'));
-  let selectedObject=null;
-  const selectObject=(el)=>{if(!document.body.classList.contains('edit-on'))return;selectedObject?.classList.remove('selected');selectedObject=el;selectedObject?.classList.add('selected');};
-  const saveObject=(el)=>{if(!document.body.classList.contains('edit-on'))return;if(!el?.dataset.objId)return;localStorage.setItem('receivablesGuide:obj:'+el.dataset.objId,JSON.stringify({width:el.style.width||'',height:el.style.height||'',deleted:el.classList.contains('deleted')}));};
-  objects.forEach((el,i)=>{
-    el.classList.add('design-object');el.dataset.objId='o'+i;
-    const saved=localStorage.getItem('receivablesGuide:obj:'+el.dataset.objId);
-    if(saved){try{const v=JSON.parse(saved);if(v.width)el.style.width=v.width;if(v.height)el.style.height=v.height;if(v.deleted)el.classList.add('deleted')}catch(e){}}
-    const del=document.createElement('button');del.type='button';del.className='obj-delete';del.textContent='×';del.title='개체 삭제';del.contentEditable='false';
-    del.onclick=(ev)=>{ev.preventDefault();ev.stopPropagation();if(!document.body.classList.contains('edit-on'))return;el.classList.add('deleted');saveObject(el);};
-    el.appendChild(del);
-    el.addEventListener('click',(ev)=>{if(ev.target===del)return;selectObject(el);},true);
-    const ro=new ResizeObserver(()=>{if(document.body.classList.contains('edit-on')&&el.offsetParent!==null){el.style.width=el.style.width||el.getBoundingClientRect().width+'px';el.style.height=el.style.height||el.getBoundingClientRect().height+'px';saveObject(el);}});
-    ro.observe(el);
-  });
-  function setEditMode(on){
-    document.body.classList.toggle('edit-on',on);document.body.classList.toggle('mode-view',!on);
-    editables.forEach(el=>el.contentEditable=on?'true':'false');
-    if(!on){selectedObject?.classList.remove('selected');selectedObject=null;}
-  }
-  document.getElementById('viewerMode').onclick=()=>setEditMode(false);
-  document.getElementById('editMode').onclick=()=>{const pw=prompt('Edit mode 비밀번호를 입력하세요.');if(pw===EDIT_PASSWORD){setEditMode(true);}else if(pw!==null){alert('비밀번호가 일치하지 않습니다.');}};
-  document.addEventListener('keydown',(e)=>{if((e.key==='Delete'||e.key==='Backspace')&&selectedObject&&!document.activeElement?.isContentEditable&&document.body.classList.contains('edit-on')){selectedObject.classList.add('deleted');saveObject(selectedObject);selectedObject=null;}});
-  document.getElementById('resetEdits').onclick=()=>{if(confirm('이 브라우저에 저장된 수정 내용을 초기화할까요?')){Object.keys(localStorage).filter(k=>k.startsWith('receivablesGuide:')).forEach(k=>localStorage.removeItem(k));location.reload();}};
-  async function ensurePptxLib(){
-    if(typeof PptxGenJS !== 'undefined') return true;
-    await new Promise((resolve)=>{const sc=document.createElement('script');sc.src='pptxgen.bundle.js?v=2';sc.onload=resolve;sc.onerror=resolve;document.head.appendChild(sc);});
-    return typeof PptxGenJS !== 'undefined';
-  }
-  async function savePowerPoint(){
-    const btn=document.getElementById('downloadPptx');
-    const status=document.getElementById('pptStatus');
-    status.textContent='생성 중...'; btn.disabled=true;
-    try{
-    if(!(await ensurePptxLib())){throw new Error('PowerPoint 생성 라이브러리를 불러오지 못했습니다. 새로고침 후 다시 시도하거나 기본 PPT를 사용해 주세요.');}
-    const pptx=new PptxGenJS();
-    pptx.layout='LAYOUT_WIDE';
-    pptx.author='Accounting & Tax';
-    pptx.subject='연체 매출채권 발생 시 영업 실무 유의사항';
-    pptx.title=document.title;
-    pptx.lang='ko-KR';
-    pptx.theme={headFontFace:'Aptos',bodyFontFace:'Aptos',lang:'ko-KR'};
-    const C={green:'185AAA',deep:'185AAA',light:'F0F6FD',line:'E3E9F1',text:'1F2933',muted:'6B7280',white:'FFFFFF',gold:'D2A02A',red:'C2413A',accentGreen:'089462'};
-    const clean=t=>(t||'').replace(/×/g,'').replace(/\s+\n/g,'\n').replace(/\n\s+/g,'\n').trim();
-    const visible=el=>el&&!el.classList.contains('deleted');
-    const addText=(sl,t,x,y,w,h,opt={})=>{sl.addText(clean(t),{x,y,w,h,fontFace:'Aptos',fontSize:opt.size||14,bold:!!opt.bold,color:opt.color||C.text,fit:'shrink',valign:'top',margin:opt.margin??0.04});};
-    const addFooter=(sl,n,total)=>{addText(sl,'Accounting & Tax / Receivables Control',0.55,7.08,4,0.2,{size:8,color:C.muted});addText(sl,`${n} / ${total}`,12.05,7.08,0.7,0.2,{size:8,color:C.muted});};
-    const addCard=(sl,el,x,y,w,h,accent)=>{
-      sl.addShape(pptx.ShapeType.roundRect,{x,y,w,h,rectRadius:0.08,fill:{color:C.white},line:{color:C.line,pt:1}});
-      sl.addShape(pptx.ShapeType.rect,{x,y,w,h:0.07,fill:{color:accent},line:{color:accent,transparency:100}});
-      const head=el.querySelector('h3')?.innerText||'';
-      const parts=[];
-      [...el.children].forEach(ch=>{if(ch.classList?.contains('obj-delete')||ch.tagName==='H3'||ch.classList?.contains('big-number'))return; if(ch.tagName==='UL'){parts.push([...ch.querySelectorAll('li')].map(li=>'• '+clean(li.innerText)).join('\n'));} else {const txt=clean(ch.innerText); if(txt) parts.push(txt);}});
-      addText(sl,head,x+0.17,y+0.15,w-0.34,0.32,{size:14,bold:true});
-      addText(sl,parts.join('\n'),x+0.17,y+0.55,w-0.34,h-0.65,{size:11});
-    };
-    const addDomTable=(sl,tbl,x,y,w,h)=>{
-      const rows=[...tbl.querySelectorAll('tr')].map(tr=>[...tr.children].filter(c=>!c.classList.contains('obj-delete')).map(c=>clean(c.innerText))).filter(r=>r.length);
-      if(!rows.length)return;
-      const data=rows.map((r,i)=>r.map(v=>({text:v,options:{fontFace:'Aptos',fontSize:i?8.8:9.5,bold:i===0,color:i?C.text:C.white,fill:{color:i?C.white:C.deep},margin:0.05,valign:'mid'}})));
-      sl.addTable(data,{x,y,w,h,border:{type:'solid',color:C.line,pt:0.6},autoFit:false,margin:0.04,fit:'shrink'});
-    };
-    async function imageDataUri(url){
-      try{const res=await fetch(url); const blob=await res.blob(); return await new Promise((resolve)=>{const rd=new FileReader();rd.onload=()=>resolve(rd.result);rd.onerror=()=>resolve(null);rd.readAsDataURL(blob);});}catch(e){return null;}
-    }
-    const logoData=await imageDataUri('assets/sangah-logo.png');
-    const allSlides=[...document.querySelectorAll('.slide')];
-    allSlides.forEach((domSlide,idx)=>{
-      const sl=pptx.addSlide();
-      sl.background={color:'FFFFFF'};
-      sl.addShape(pptx.ShapeType.rect,{x:0.62,y:0.42,w:11.75,h:0.025,fill:{color:C.green},line:{color:C.green,transparency:100}});
-      sl.addShape(pptx.ShapeType.roundRect,{x:10.18,y:0.18,w:2.55,h:0.42,rectRadius:0.04,fill:{color:'FFFFFF',transparency:100},line:{color:'FFFFFF',transparency:100}});
-      if(logoData) sl.addImage({data:logoData,x:10.32,y:0.28,w:2.25,h:0.32});
-      const kicker=domSlide.querySelector('.kicker'); if(visible(kicker)) addText(sl,kicker.innerText,0.62,0.46,4.8,0.25,{size:9.5,bold:true,color:C.green});
-      const h=domSlide.querySelector('h1,h2'); if(visible(h)) addText(sl,h.innerText,0.62,0.82,10.8,0.9,{size:30,bold:true});
-      const lead=[...domSlide.querySelectorAll('.lead,.muted')].find(el=>visible(el)&&!el.closest('.box')&&!el.closest('.footer')&&!el.closest('.copylink'));
-      if(lead) addText(sl,lead.innerText,0.62,1.65,10.6,0.45,{size:13,color:C.muted});
-      const tables=[...domSlide.querySelectorAll('table')].filter(visible);
-      const boxes=[...domSlide.querySelectorAll('.box')].filter(visible);
-      const refs=[...domSlide.querySelectorAll('.canvas > ul')].filter(visible);
-      if(tables.length){ addDomTable(sl,tables[0],0.62,1.75,12.05,4.85); }
-      else if(boxes.length){
-        const n=boxes.length; const y=n>3?1.95:2.15; const gap=0.28; const cols=Math.min(n,3); const w=Math.min(5.65,(12.1-(cols-1)*gap)/cols);
-        boxes.forEach((b,i)=>{const row=Math.floor(i/3),col=i%3; const x=0.62+col*(w+gap); const h=n>3?2.05:2.75; addCard(sl,b,x,y+row*(h+0.28),w,h,[C.green,C.gold,C.green,C.red][i%4]);});
-      }
-      else if(refs.length){
-        const items=[...refs[0].querySelectorAll('li')].map(li=>'• '+clean(li.innerText)).join('\n');
-        sl.addShape(pptx.ShapeType.roundRect,{x:0.62,y:1.85,w:11.6,h:4.2,fill:{color:C.white},line:{color:C.line,pt:1}});
-        addText(sl,items,0.95,2.15,10.9,3.6,{size:15});
-      } else {
-        const ps=[...domSlide.querySelectorAll('.canvas > p')].filter(visible).map(el=>clean(el.innerText)).filter(Boolean).join('\n');
-        if(ps) addText(sl,ps,0.62,2.2,10.8,2.2,{size:16,color:C.muted});
-      }
-      addFooter(sl,idx+1,allSlides.length);
-    });
-    const fileName='receivables-tax-considerations-edited.pptx';
-    try{
-      const blob=await pptx.write({outputType:'blob'});
-      const a=document.createElement('a');
-      a.href=URL.createObjectURL(blob);
-      a.download=fileName;
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1000);
-    }catch(blobErr){
-      await pptx.writeFile({fileName});
-    }
-    status.textContent='다운로드 완료';
-    setTimeout(()=>status.textContent='',2500);
-    }catch(err){
-      console.error(err);
-      status.textContent='저장 실패';
-      alert((err&&err.message)||'PowerPoint 저장 중 오류가 발생했습니다.');
-    }finally{btn.disabled=false;}
-  }
-  document.getElementById('downloadPptx').onclick=savePowerPoint;
+let cur=1, total=12;
+function go(n){ cur=Math.max(1,Math.min(total,n)); document.getElementById('s'+cur).scrollIntoView({behavior:'smooth',block:'center'}); document.getElementById('counter').textContent=cur+' / '+total; location.hash='s'+cur; }
+function nextSlide(){ go(cur+1); }
+function prevSlide(){ go(cur-1); }
+document.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'||e.key==='PageDown')nextSlide(); if(e.key==='ArrowLeft'||e.key==='PageUp')prevSlide(); });
+window.addEventListener('hashchange',()=>{ const m=location.hash.match(/s(\d+)/); if(m){cur=+m[1]; document.getElementById('counter').textContent=cur+' / '+total;} });
 </script>
 </body>
 </html>
